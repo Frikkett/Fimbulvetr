@@ -1,1 +1,1 @@
-print("WaffleIron")
+print("Hvat segirthu")
