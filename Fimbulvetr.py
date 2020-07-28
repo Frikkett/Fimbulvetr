@@ -40,7 +40,11 @@ def Menu():
         while True:
             menuChoice = str(input("===>>"))
             if menuChoice in ListA:
-                print("hi")
+                optionsCheck = open("Save File","r")
+                optionsNum = int(optionsCheck.read())
+                loadOptions = str(optionsCheck.read())
+                print(optionsNum)
+                print(loadOptions)
             elif menuChoice in ListB:
                 print("bye")
             elif menuChoice in ListC:
