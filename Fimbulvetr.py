@@ -1,3 +1,8 @@
+import os
+import time
+saveCheck = os.path.isdir('Fimbulvetr Save File')
+if saveCheck == False:
+    os.mkdir('Fimbulvetr Save File')
 print("Hvat segirthu?")
 print("Cause I'm doin fine")
 print("Although I will say the Fimbulvetr is quite annoying, what with all the ashfall")
@@ -40,11 +45,14 @@ def Menu():
         while True:
             menuChoice = str(input("===>>"))
             if menuChoice in ListA:
-                optionsCheck = open("Save File","r")
-                optionsNum = int(optionsCheck.read())
-                loadOptions = str(optionsCheck.read())
-                print(optionsNum)
-                print(loadOptions)
+                optionsCheck = os.listdir('Fimbulvetr Save File')
+                if optionsCheck == 0:
+                    optionsCheckNull = "I'm sorry, it appears that there are no save files on this computer."
+                    for char in optionsCheckNull:
+                        print(char, end='')
+                        time.sleep(0.02)
+                else:
+                    print(optionsCheck)
             elif menuChoice in ListB:
                 print("bye")
             elif menuChoice in ListC:
@@ -53,4 +61,6 @@ def Menu():
                 print("Type an actual option please.")
 
 
-#MainGame Loop
+# MainGame Loop
+
+Menu()
