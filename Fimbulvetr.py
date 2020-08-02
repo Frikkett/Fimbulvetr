@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 saveCheck = os.path.isdir('Fimbulvetr Save File')
 if saveCheck == False:
     os.mkdir('Fimbulvetr Save File')
@@ -14,6 +15,11 @@ ListB = list(["B","b",'"b"','"B"'," B"," b","B ","b ",])
 ListC = list(["C","c",'"c"','"C"'," C"," c","C ","c ",])
 ListD = list(["D","d",'"d"','"D"'," D"," d","D ","d ",])
 
+def printFun(w):
+    for c in w:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.02)
 
 def Menu():
     global ListA
@@ -27,7 +33,9 @@ def Menu():
         | |||   |||  H]|__   |/|  \///|  HlllL/ll| |
         | |||   |||  H]]]]]  |/|   \//|   \lllll/  |
         |__________________________________________|''')
-        print(''' Please select ONE of the following options:
+        print(''' 
+        Please select ONE of the following options:
+        
          ______
         |  /\  | Load Game. This will automatically save your game and load a
         | /==\ | different game instead. 
@@ -43,14 +51,13 @@ def Menu():
         
         ''')
         while True:
-            menuChoice = str(input("===>>"))
+            menuChoice = str(input('''
+===>>'''))
             if menuChoice in ListA:
                 optionsCheck = os.listdir('Fimbulvetr Save File')
-                if optionsCheck == 0:
-                    optionsCheckNull = "I'm sorry, it appears that there are no save files on this computer."
-                    for char in optionsCheckNull:
-                        print(char, end='')
-                        time.sleep(0.02)
+                optionsNum = len(optionsCheck)
+                if optionsNum == 0:
+                    printFun("I'm sorry, it appears that there are no save files on this computer.")
                 else:
                     print(optionsCheck)
             elif menuChoice in ListB:
