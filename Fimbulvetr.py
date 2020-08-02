@@ -16,11 +16,9 @@ ListC = list(["C","c",'"c"','"C"'," C"," c","C ","c ",])
 ListD = list(["D","d",'"d"','"D"'," D"," d","D ","d ",])
 
 def printFun(w):
-    for c in w:
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(0.02)
-
+    for char in w:
+        time.sleep(0.01)
+        print(char, end='')
 def Menu():
     global ListA
     while True:
@@ -52,14 +50,23 @@ def Menu():
         ''')
         while True:
             menuChoice = str(input('''
-===>>'''))
+==='''))
             if menuChoice in ListA:
                 optionsCheck = os.listdir('Fimbulvetr Save File')
                 optionsNum = len(optionsCheck)
                 if optionsNum == 0:
-                    printFun("I'm sorry, it appears that there are no save files on this computer.")
+                    print("I'm sorry, it appears that there are no save files on this computer.")
                 else:
+                    print("There are {} saved files on this computer. they are:".format(optionsNum))
                     print(optionsCheck)
+                    print('''
+Please enter the name of the file you would like to load.''')
+                    while True:
+                        loadName = input("===")
+                        if loadName in optionsCheck:
+                            print("Time to Load!")
+                        else:
+                            print("Please type an actual option from the list.")
             elif menuChoice in ListB:
                 print("bye")
             elif menuChoice in ListC:
