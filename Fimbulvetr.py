@@ -8,7 +8,9 @@ print("Hvat segirthu?")
 print("Cause I'm doin fine")
 print("Although I will say the Fimbulvetr is quite annoying, what with all the ashfall")
 
+# Global Variables
 inGame = False
+theGame = "hi"
 
 # Function Definitions
 
@@ -32,15 +34,23 @@ def Menu(inGame):
     menuUp = 0
     global ListA
     while menuUp == 0:
-        print('''
-         __________________________________________
-        |                                          |
-        | |||\ /|||  H]]]]]  |///\  |/|  Hlll  Hl| |
-        | |||\V/|||  H]|__   |/|\/\ |/|  Hlll  Hl| |
-        | |||   |||  H]]]]]  |/| \/\|/|  Hlll  Hl| |
-        | |||   |||  H]|__   |/|  \///|  HlllL/ll| |
-        | |||   |||  H]]]]]  |/|   \//|   \lllll/  |
-        |__________________________________________|''')
+        print(r'''
+        ()===================================================()
+        ||    __________________________________________
+        ||  ()\__/\\\\____________/\\\\
+        ||   \\\_\/\\\\\\________/\\\\\\
+        ||    ()\_\/\\\//\\\____/\\\//\\\
+        ||     \\\_\/\\\\///\\\/\\\/_\/\\\
+        ||      ()\_\/\\\__\///\\\/___\/\\\
+        ||       \\\_\/\\\____\///_____\/\\\
+        ||        ()\_\/\\\_____________\/\\\
+        ||         \\\_\///______________\///
+        ||          ()\______________________
+        ||           \\\______________________
+        ||            ()\______________________
+        ||             \\\_____________________
+        ||
+        ()===================================================''')
         print(''' 
         Please select ONE of the following options:
         
@@ -120,7 +130,24 @@ Loading {}.'''.format(loadTxt))
                         else:
                             print("Please type an actual option from the list.")
             elif menuChoice in ListB:
-                print("bye")
+                makeTry = True
+                while makeTry == True:
+                    print("What would you like to call your game? (type 'Cancel' to exit)")
+                    gameName = str(input())
+                    gameDef = gameName + ".txt"
+                    try:
+                        makeNew = open(gameDef, "x")
+                        makeNew.close()
+                        makeNew = open(gameDef, "w")
+                        makeNew.write("1")
+                        makeNew.close()
+                        theGame = gameDef
+                        menuUp = 1
+                        menuStay = 1
+                        makeTry = False
+                    except ValueError:
+                        print("This name is already in use. Please choose a different name.")
+
             elif menuChoice in ListC:
                 print("die")
             elif menuChoice in ListD:
