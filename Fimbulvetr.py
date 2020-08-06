@@ -35,22 +35,22 @@ def Menu(inGame):
     global ListA
     while menuUp == 0:
         print(r'''
-        ()===================================================()
-        ||    __________________________________________
-        ||  ()\__/\\\\____________/\\\\
-        ||   \\\_\/\\\\\\________/\\\\\\
-        ||    ()\_\/\\\//\\\____/\\\//\\\
-        ||     \\\_\/\\\\///\\\/\\\/_\/\\\
-        ||      ()\_\/\\\__\///\\\/___\/\\\
-        ||       \\\_\/\\\____\///_____\/\\\
-        ||        ()\_\/\\\_____________\/\\\
-        ||         \\\_\///______________\///
-        ||          ()\______________________
-        ||           \\\______________________
-        ||            ()\______________________
-        ||             \\\_____________________
-        ||
-        ()===================================================''')
+        ()=============================================================================================================()
+        ||   ____________________________________________________________________________________________              ||
+        || ()\__/\\\\____________/\\\\______/\\\\\\\\\\\\______/\\\\________/\\\______/\\\________/\\\___\             ||
+        ||  \\\_\/\\\\\\________/\\\\\\_____\/\\\////////______\/\\\\\\_____\/\\\_____\/\\\_______\/\\\___\            ||
+        ||   ()\_\/\\\//\\\____/\\\//\\\_____\/\\\______________\/\\\//\\\___\/\\\_____\/\\\_______\/\\\___\           ||
+        ||    \\\_\/\\\\///\\\/\\\/_\/\\\_____\/\\\\\\\\\\\\_____\/\\\\///\\\_\/\\\_____\/\\\_______\/\\\___\          ||
+        ||     ()\_\/\\\__\///\\\/___\/\\\_____\/\\\////////______\/\\\__\///\\\\\\\_____\/\\\_______\/\\\___\         ||
+        ||      \\\_\/\\\____\///_____\/\\\_____\/\\\______________\/\\\____\///\\\\\_____\/\\\_______\/\\\___\        ||
+        ||       ()\_\/\\\_____________\/\\\_____\/\\\\\\\\\\\\_____\/\\\______\///\\\_____\/\\\\\\\\\\\\\\\___\       ||
+        ||        \\\_\///______________\///______\////////////______\///_________\///______\///////////////____\      ||
+        ||         ()\___________________________________________________________________________________________\     ||
+        ||          \\\___________________________________________________________________________________________\    ||
+        ||           ()\___________________________________________________________________________________________\   ||
+        ||            \\\___________________________________________________________________________________________\  ||
+        ||             ()\___________________________________________________________________________________________\ ||
+        ()=============================================================================================================()''')
         print(''' 
         Please select ONE of the following options:
         
@@ -77,6 +77,7 @@ def Menu(inGame):
         ''')
         while menuStay == 0:
             loadLoop = 0
+            deadLoop = 0
             menuChoice = str(input('''
 ==='''))
             if menuChoice.lower() in ListA:
@@ -129,27 +130,95 @@ Loading {}.'''.format(loadTxt))
                             break
                         else:
                             print("Please type an actual option from the list.")
+
             elif menuChoice in ListB:
                 makeTry = True
                 while makeTry == True:
                     print("What would you like to call your game? (type 'Cancel' to exit)")
                     gameName = str(input())
-                    gameDef = gameName + ".txt"
+                    gameDef = "Fimbulvetr Save File/" + gameName + ".txt"
                     try:
-                        makeNew = open(gameDef, "x")
-                        makeNew.close()
-                        makeNew = open(gameDef, "w")
-                        makeNew.write("1")
-                        makeNew.close()
-                        theGame = gameDef
-                        menuUp = 1
-                        menuStay = 1
-                        makeTry = False
-                    except ValueError:
+                        if gameName in cancel:
+                            print("Cancelled.")
+                            makeTry = False
+                        else:
+                            makeNew = open(gameDef, "x")
+                            makeNew.close()
+                            makeNew = open(gameDef, "w")
+                            makeNew.write("1")
+                            makeNew.close()
+                            theGame = gameDef
+                            menuUp = 1
+                            menuStay = 1
+                            makeTry = False
+                    except FileExistsError:
                         print("This name is already in use. Please choose a different name.")
 
             elif menuChoice in ListC:
-                print("die")
+                optionsCheck = os.listdir('Fimbulvetr Save File')
+                optionsNum = len(optionsCheck)
+                if optionsNum == 0:
+                    print("I'm sorry, it appears that there are no save files on this computer.")
+                else:
+                    print("There are {} saved files on this computer. they are:".format(optionsNum))
+                    print(optionsCheck)
+                    print('''
+Please enter the name of the file you would like to EXTERMINATE, or type "cancel" to cancel EXTERMINATION.''')
+                    while deadLoop == 0:
+                        deadName = str(input("==="))
+                        deadTxt = deadName + ".txt"
+                        if deadName in optionsCheck:
+                            while True:
+                                print("Are you ABSOLUTELY SURE you want to EXTERMINATE {}?".format(deadName))
+                                deadSure = input("Yes/No:")
+                                if deadSure.lower() in yes:
+                                    print('''
+Exterminate!''')
+                                    time.sleep(0.2)
+                                    print('''
+ Exterminate!''')
+                                    time.sleep(0.2)
+                                    print('''
+...''')
+                                    time.sleep(0.2)
+                                    print('''
+{} Exterminated.'''.format(deadName))
+                                    deleteName = "Fimbulvetr Save File/" + deadName
+                                    os.remove(deleteName)
+                                    deadLoop = 1
+                                    break
+                                elif deadSure.lower() in no:
+                                    print("EXTERMINATION Cancelled")
+                                    deadLoop = 1
+                                    break
+                        elif deadTxt in optionsCheck:
+                            while True:
+                                print("Are you ABSOLUTELY SURE you want to EXTERMINATE {}?".format(deadTxt))
+                                deadSure = input("Yes/No:")
+                                if deadSure.lower() in yes:
+                                    print('''
+Exterminate!''')
+                                    time.sleep(0.2)
+                                    print('''
+ Exterminate!''')
+                                    time.sleep(0.2)
+                                    print('''
+...''')
+                                    time.sleep(0.2)
+                                    print('''
+{} Exterminated.'''.format(deadTxt))
+                                    os.remove(deadTxt)
+                                    deadLoop = 1
+                                    break
+                                elif deadSure.lower() in no:
+                                    print("EXTERMINATION Cancelled")
+                                    deadLoop = 1
+                                    break
+                        elif deadName.lower() in cancel:
+                            print("EXTERMINATION Cancelled")
+                            break
+                        else:
+                            print("Please type an actual option from the list.")
             elif menuChoice in ListD:
                 print("Thanks for shopping at Kmart.")
                 menuUp = 1
