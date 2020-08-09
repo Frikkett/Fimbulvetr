@@ -11,6 +11,7 @@ print("Although I will say the Fimbulvetr is quite annoying, what with all the a
 # Global Variables
 inGame = False
 theGame = "hi"
+Navigator = 0
 
 # Function Definitions
 
@@ -19,6 +20,7 @@ ListB = list(["b",'"b"'," b","b "])
 ListC = list(["c",'"c"'," c","c "])
 ListD = list(["d",'"d"'," d","d "])
 cancel = list(["cancel","stop","back"])
+lexit = (["exit", "break", "kill", "die", "leave", " exit", "exit ", "ext", "exi", ])
 yes = list(["y","yes","ye","ys","yes "," yes","sure","sur","sre","ure","yeah","yea","yeh","yah","eah","yup","yip","yes please","absolutely","yep"])
 no = list(["n","no","nop","nope","not","not really","not realy","no thanks","noo","nooo","noooo","nooooo","never","nno","nnoo"])
 
@@ -29,10 +31,10 @@ def printFun(w):
 
 
 def Menu(inGame):
-    loadLoop = 0
     menuStay = 0
     menuUp = 0
     global ListA
+    global theGame
     while menuUp == 0:
         print(r'''
         ()=============================================================================================================()
@@ -52,7 +54,7 @@ def Menu(inGame):
         ||             ()\___________________________________________________________________________________________\ ||
         ()=============================================================================================================()''')
         print(''' 
-        Please select ONE of the following options:
+        Please select ONE of the following options, or type "exit" if you want to exit the game.
         
          ______
         |  /\  | Load Game. This will automatically save your game and load a
@@ -100,7 +102,7 @@ Please enter the name of the file you would like to load, or type "cancel" to ca
                                 if loadSure.lower() in yes:
                                     print('''
 Loading {}.'''.format(loadName))
-                                    theGame = loadName
+                                    theGame = "Fimbulvetr Save File/" + loadName
                                     menuStay = 1
                                     menuUp = 1
                                     loadLoop = 1
@@ -116,7 +118,7 @@ Loading {}.'''.format(loadName))
                                 if loadSure.lower() in yes:
                                     print('''
 Loading {}.'''.format(loadTxt))
-                                    theGame = loadTxt
+                                    theGame = "Fimbulvetr Save File/" + loadTxt
                                     menuStay = 1
                                     menuUp = 1
                                     loadLoop = 1
@@ -131,7 +133,7 @@ Loading {}.'''.format(loadTxt))
                         else:
                             print("Please type an actual option from the list.")
 
-            elif menuChoice in ListB:
+            elif menuChoice.lower() in ListB:
                 makeTry = True
                 while makeTry == True:
                     print("What would you like to call your game? (type 'Cancel' to exit)")
@@ -147,6 +149,10 @@ Loading {}.'''.format(loadTxt))
                             makeNew = open(gameDef, "w")
                             makeNew.write("1")
                             makeNew.close()
+                            print("Your game is called {}.".format(gameName))
+                            print("Your game is located at {}.".format(gameDef))
+                            print('''
+Please Enjoy the game.''')
                             theGame = gameDef
                             menuUp = 1
                             menuStay = 1
@@ -154,7 +160,7 @@ Loading {}.'''.format(loadTxt))
                     except FileExistsError:
                         print("This name is already in use. Please choose a different name.")
 
-            elif menuChoice in ListC:
+            elif menuChoice.lower() in ListC:
                 optionsCheck = os.listdir('Fimbulvetr Save File')
                 optionsNum = len(optionsCheck)
                 if optionsNum == 0:
@@ -200,14 +206,15 @@ Exterminate!''')
 Exterminate!''')
                                     time.sleep(0.2)
                                     print('''
- Exterminate!''')
+Exterminate!''')
                                     time.sleep(0.2)
                                     print('''
 ...''')
                                     time.sleep(0.2)
                                     print('''
 {} Exterminated.'''.format(deadTxt))
-                                    os.remove(deadTxt)
+                                    deleteName = "Fimbulvetr Save File/" + deadTxt
+                                    os.remove(deleteName)
                                     deadLoop = 1
                                     break
                                 elif deadSure.lower() in no:
@@ -219,14 +226,78 @@ Exterminate!''')
                             break
                         else:
                             print("Please type an actual option from the list.")
-            elif menuChoice in ListD:
+            elif menuChoice.lower() in ListD:
                 print("Thanks for shopping at Kmart.")
                 menuUp = 1
                 menuStay = 1
+            elif menuChoice.lower() in lexit:
+                print("Exiting Program.")
+                exit()
             else:
                 print("Type an actual option please.")
 
 
 # MainGame Loop
 
-Menu(True)
+Menu(False)
+gameOn = 0
+while gameOn == 0:
+    segCheck = open(theGame,"r")
+    Navigator = str(segCheck.readline(1))
+
+    # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
+
+    if Navigator == "0":
+        print('''
+        
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            else:
+                print("Please select an actual option.")
+
+    if Navigator == "1":
+        print('''
+        
+        
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            else:
+                print("Please select an actual option.")
