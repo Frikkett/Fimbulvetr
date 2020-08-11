@@ -283,15 +283,44 @@ toppled cities and leveled forests. This was not the worst of it, however, as th
 chain of events. Tectonic disturbances caused by the earthquake kick-started a reaction in the Yellowstone volcanic 
 caldera, home to the Yellowstone Super-Volcano. Being 2020, of course the volcano erupted. The eruption decimated 
 America, and plumes of volcanic ash surrounded the earth.
-
+''')
+        input("press [ENTER] to continue")
+        print('''
 The limited sunlight that pierced the clouds was not enough to properly maintain the earth's climate, 
 and the earth plunged into a decades-long winter. Some raving lunatics on the internet compared the current situation to
-norse legend of Ragnarok, in which there is a 3 year winter before the end of the world.
+norse legend of Ragnarok, in which there is a 3 year winter before the end of the world. Thus, the catastrophe
+took the name of "Fimbulwinter" 
+''')
+        input("press [ENTER] to continue")
+        print('''
+So far, the Fimbulwinter has lasted 26 years. What remains of America is now a hostile, ungoverned land as most of the
+wealthy survivors of the eruption fled to Europe and Canada. The AshFall is not as bad as it was years ago, but 
+a single breath of the volcanic dust can still lead to severe injury.
 
-a Fimbulwinter that has lasted 26 years. War broke out over land and resources, primarily energy sources, 
-as fossil fuels only add to the clouds and solar power is virtually nonexistent. What remains of America is 
-now a hostile, ungoverned land as most of the survivors of the eruption fled to Europe and Canada.
+''')
+        input("press [ENTER] to continue")
+        print('''
+        
+BUT. Where do you fit in? Well, your name is Eliezer Written. You really don't care about all that stuff above, you just 
+do what you're told as a part of the Vinter Kin, a growing conglomeration of criminals and idiots. 
 
+You are currently on your way to a small settlement you and your group have decided to ransack, and because of the plot 
+it just so happens to be your first raid...
+        ''')
+        input("press [ENTER] to continue")
+        print(''' 
+
+
+Your jeep skids to a halt as you arrive at the outskirts of the village. Your "Co-workers" leap out, weapons raised, 
+and stride towards the defenseless settlement.
+
+        You...
+        
+        [A] Run away
+        
+        [B] Walk with them
+        
+        [C] Mutiny!
         
         ''')
         while True:
