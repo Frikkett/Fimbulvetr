@@ -274,9 +274,24 @@ while gameOn == 0:
             else:
                 print("Please select an actual option.")
 
+    # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
+
     if Navigator == "1":
         print('''
-        
+On October 28th in the year 2020 an immense earthquake rocked the earth. Centered in north america, the quake 
+toppled cities and leveled forests. This was not the worst of it, however, as the earthquake set off a catastrophic 
+chain of events. Tectonic disturbances caused by the earthquake kick-started a reaction in the Yellowstone volcanic 
+caldera, home to the Yellowstone Super-Volcano. Being 2020, of course the volcano erupted. The eruption decimated 
+America, and plumes of volcanic ash surrounded the earth.
+
+The limited sunlight that pierced the clouds was not enough to properly maintain the earth's climate, 
+and the earth plunged into a decades-long winter. Some raving lunatics on the internet compared the current situation to
+norse legend of Ragnarok, in which there is a 3 year winter before the end of the world.
+
+a Fimbulwinter that has lasted 26 years. War broke out over land and resources, primarily energy sources, 
+as fossil fuels only add to the clouds and solar power is virtually nonexistent. What remains of America is 
+now a hostile, ungoverned land as most of the survivors of the eruption fled to Europe and Canada.
+
         
         ''')
         while True:
