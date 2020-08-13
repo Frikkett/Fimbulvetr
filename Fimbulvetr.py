@@ -11,7 +11,7 @@ print("Although I will say the Fimbulvetr is quite annoying, what with all the a
 # Global Variables
 inGame = False
 theGame = "hi"
-Navigator = 0
+Navigator = "hi"
 
 # Function Definitions
 
@@ -241,9 +241,17 @@ Exterminate!''')
 
 Menu(False)
 gameOn = 0
+segCheck = open(theGame,"r")
+Navigator = str(segCheck.readline(2))
+segCheck.close()
+with open(theGame,"r") as before:
+    after = before.readlines()
+
 while gameOn == 0:
-    segCheck = open(theGame,"r")
-    Navigator = str(segCheck.readline(1))
+    Writing = Navigator + "\n"
+    after[1] = Writing
+    with open(theGame,"w") as before:
+        before.writelines(after)
 
     # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
 
@@ -312,7 +320,7 @@ it just so happens to be your first raid...
 
 
 Your jeep skids to a halt as you arrive at the outskirts of the village. Your "Co-workers" leap out, weapons raised, 
-and stride towards the defenseless settlement.
+and stride towards the defenseless settlement. If they get there, that village will not survive.
 
         You...
         
@@ -322,20 +330,32 @@ and stride towards the defenseless settlement.
         
         [C] Mutiny!
         
+        (HINT: type the letter in brackets to select the corresponding action)
         ''')
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
-                print('''
-            
+                print(''' 
+
+Alright, coward. 
+You turn your back on the innocent village as screams and thunderous gunfire erupt behind you.
+Have fun sleeping tonight.
                 ''')
-                Navigator = "1"
+                Navigator = "1A"
                 break
             if gameChoice.lower() in ListB:
-                print('''
-            
+                print(''' 
+                
+Really? You actually want to walk straight into a massacre 
+WITH the people DOING THE MASSACRING?
                 ''')
-                Navigator = "1"
+                time.sleep(1)
+                print('''
+                
+Well, I suppose there's not much I can do to stop you.
+You ARE the one making the choices here, so I am legally obligated to let you commit mass murder. 
+Just don't expect me to narrate it!''')
+                Navigator = "1B"
                 break
             if gameChoice.lower() in ListC:
                 print('''
