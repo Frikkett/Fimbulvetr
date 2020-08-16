@@ -29,6 +29,14 @@ def printFun(w):
         time.sleep(0.01)
         print(char, end='')
 
+def repLine(numLine, chaVar):
+    global theGame
+    write = open(theGame, 'r').readlines()
+    write[numLine] = str(chaVar)
+    writer = open(theGame, 'w')
+    writer.writelines(write)
+    writer.close()
+
 
 def Menu(inGame):
     menuStay = 0
@@ -242,16 +250,14 @@ Exterminate!''')
 Menu(False)
 gameOn = 0
 segCheck = open(theGame,"r")
-Navigator = str(segCheck.readline(2))
+Navigator = str(segCheck.readline(1))
 segCheck.close()
-with open(theGame,"r") as before:
-    after = before.readlines()
+
 
 while gameOn == 0:
-    Writing = Navigator + "\n"
-    after[1] = Writing
-    with open(theGame,"w") as before:
-        before.writelines(after)
+    Navigatord = str(Navigator)
+    repLine(1, Navigatord)
+
 
     # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
 
@@ -356,6 +362,33 @@ Well, I suppose there's not much I can do to stop you.
 You ARE the one making the choices here, so I am legally obligated to let you commit mass murder. 
 Just don't expect me to narrate it!''')
                 Navigator = "1B"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            else:
+                print("Please select an actual option.")
+
+if Navigator == "1A":
+        print('''
+        it freakin worked
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                Navigator = "1"
                 break
             if gameChoice.lower() in ListC:
                 print('''
