@@ -23,6 +23,8 @@ cancel = list(["cancel","stop","back"])
 lexit = (["exit", "break", "kill", "die", "leave", " exit", "exit ", "ext", "exi", ])
 yes = list(["y","yes","ye","ys","yes "," yes","sure","sur","sre","ure","yeah","yea","yeh","yah","eah","yup","yip","yes please","absolutely","yep"])
 no = list(["n","no","nop","nope","not","not really","not realy","no thanks","noo","nooo","noooo","nooooo","never","nno","nnoo"])
+ListMenu = list(["menu", "list", "meu", "options", "men", "mnu"])
+Items = list([])
 
 def printFun(w):
     for char in w:
@@ -235,7 +237,7 @@ Exterminate!''')
                         else:
                             print("Please type an actual option from the list.")
             elif menuChoice.lower() in ListD:
-                print("Thanks for shopping at Kmart.")
+                print("Returning to game...")
                 menuUp = 1
                 menuStay = 1
             elif menuChoice.lower() in lexit:
@@ -250,14 +252,21 @@ Exterminate!''')
 Menu(False)
 gameOn = 0
 segCheck = open(theGame,"r")
-Navigator = str(segCheck.readline(1))
+Navigator = str(segCheck.readline())
+Items = segCheck.readlines()
+itePast = Items
 segCheck.close()
-
-
+navPast = Navigator
 while gameOn == 0:
-    Navigatord = str(Navigator)
-    repLine(1, Navigatord)
-
+    if navPast != Navigator:
+        Navigatord = str(Navigator)
+        repLine(0, Navigatord)
+        navPast = Navigator
+    if itePast != Items:
+        segCheck = open(theGame, "a")
+        iteAdd = [x for x in Items if x not in itePast]
+        segCheck.writelines(iteAdd)
+        segCheck.close()
 
     # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
 
@@ -284,6 +293,9 @@ while gameOn == 0:
             
                 ''')
                 Navigator = "1"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
                 break
             else:
                 print("Please select an actual option.")
@@ -369,12 +381,15 @@ Just don't expect me to narrate it!''')
                 ''')
                 Navigator = "1"
                 break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
             else:
                 print("Please select an actual option.")
 
-if Navigator == "1A":
+    elif Navigator == "1A":
         print('''
-        it freakin worked
+it freakin worked
         ''')
         while True:
             gameChoice = str(input(""))
@@ -395,6 +410,9 @@ if Navigator == "1A":
             
                 ''')
                 Navigator = "1"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
                 break
             else:
                 print("Please select an actual option.")
