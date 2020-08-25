@@ -11,7 +11,6 @@ print("Although I will say the Fimbulvetr is quite annoying, what with all the a
 # Global Variables
 inGame = False
 theGame = "hi"
-Navigator = "hi"
 
 # Function Definitions
 
@@ -25,7 +24,7 @@ yes = list(["y","yes","ye","ys","yes "," yes","sure","sur","sre","ure","yeah","y
 no = list(["n","no","nop","nope","not","not really","not realy","no thanks","noo","nooo","noooo","nooooo","never","nno","nnoo"])
 ListMenu = list(["menu", "list", "meu", "options", "men", "mnu"])
 Items = list([])
-
+itePast = list([])
 def printFun(w):
     for char in w:
         time.sleep(0.01)
@@ -34,7 +33,8 @@ def printFun(w):
 def repLine(numLine, chaVar):
     global theGame
     write = open(theGame, 'r').readlines()
-    write[numLine] = str(chaVar)
+    wrote = chaVar + "\n"
+    write[numLine] = str(wrote)
     writer = open(theGame, 'w')
     writer.writelines(write)
     writer.close()
@@ -252,25 +252,32 @@ Exterminate!''')
 Menu(False)
 gameOn = 0
 segCheck = open(theGame,"r")
-Navigator = str(segCheck.readline())
-Items = segCheck.readlines()
-itePast = Items
+Navi = str(segCheck.readline().strip())
+Navigator =str(Navi)
 segCheck.close()
-navPast = Navigator
+with open(theGame,"r") as segCheck:
+    for line in segCheck:
+        line = line.strip()
+        Items.append(line)
+        itePast.append(line)
+
+navPast = str(Navigator)
+print(Navigator)
 while gameOn == 0:
     if navPast != Navigator:
         Navigatord = str(Navigator)
         repLine(0, Navigatord)
-        navPast = Navigator
+        navPast = str(Navigator)
     if itePast != Items:
         segCheck = open(theGame, "a")
-        iteAdd = [x for x in Items if x not in itePast]
-        segCheck.writelines(iteAdd)
+        for i in Items:
+            if i not in itePast:
+                segCheck.writelines(i)
+                itePast.append(i)
         segCheck.close()
-
     # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
 
-    if Navigator == "0":
+    if str(Navigator) == "0":
         print('''
         
         ''')
@@ -302,7 +309,7 @@ while gameOn == 0:
 
     # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
 
-    if Navigator == "1":
+    if str(Navigator) == "1":
         print('''
 On October 28th in the year 2020 an immense earthquake rocked the earth. Centered in north america, the quake 
 toppled cities and leveled forests. This was not the worst of it, however, as the earthquake set off a catastrophic 
@@ -387,7 +394,7 @@ Just don't expect me to narrate it!''')
             else:
                 print("Please select an actual option.")
 
-    elif Navigator == "1A":
+    elif str(Navigator) == "1A":
         print('''
 it freakin worked
         ''')
