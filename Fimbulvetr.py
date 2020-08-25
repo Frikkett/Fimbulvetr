@@ -156,8 +156,12 @@ Loading {}.'''.format(loadTxt))
                         else:
                             makeNew = open(gameDef, "x")
                             makeNew.close()
-                            makeNew = open(gameDef, "w")
-                            makeNew.write("1")
+                            makeNew = open(gameDef, "a")
+                            makeNew.write("1\n")
+                            makeNew.write('Gun\n')
+                            makeNew.write('knife\n')
+                            makeNew.write('bread\n')
+                            makeNew.write('wallet\n')
                             makeNew.close()
                             print("Your game is called {}.".format(gameName))
                             print("Your game is located at {}.".format(gameDef))
@@ -260,7 +264,6 @@ with open(theGame,"r") as segCheck:
         line = line.strip()
         Items.append(line)
         itePast.append(line)
-
 navPast = str(Navigator)
 print(Navigator)
 while gameOn == 0:
@@ -275,6 +278,7 @@ while gameOn == 0:
                 segCheck.writelines(i)
                 itePast.append(i)
         segCheck.close()
+
     # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
 
     if str(Navigator) == "0":
@@ -287,18 +291,21 @@ while gameOn == 0:
                 print('''
             
                 ''')
+                time.sleep(1)
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListB:
                 print('''
             
                 ''')
+                time.sleep(1)
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListC:
                 print('''
             
                 ''')
+                time.sleep(1)
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListMenu:
@@ -327,8 +334,9 @@ took the name of "Fimbulwinter"
         input("press [ENTER] to continue")
         print('''
 So far, the Fimbulwinter has lasted 26 years. What remains of America is now a hostile, ungoverned land as most of the
-wealthy survivors of the eruption fled to Europe and Canada. The AshFall is not as bad as it was years ago, but 
-a single breath of the volcanic dust can still lead to severe injury.
+wealthy survivors of the eruption fled to Europe and Canada. A new weather event, dubbed "Ashfall", where instead 
+of snowflakes volcanic ash falls from the sky, has caused many survivors to huddle together in underground settlements.
+The Ashfall is not as bad as it was years ago, but a single breath of the volcanic dust can still lead to severe injury.
 
 ''')
         input("press [ENTER] to continue")
@@ -349,7 +357,7 @@ and stride towards the defenseless settlement. If they get there, that village w
 
         You...
         
-        [A] Run away
+        [A] drive away
         
         [B] Walk with them
         
@@ -365,7 +373,10 @@ and stride towards the defenseless settlement. If they get there, that village w
 Alright, coward. 
 You turn your back on the innocent village as screams and thunderous gunfire erupt behind you.
 Have fun sleeping tonight.
+
+
                 ''')
+                time.sleep(2)
                 Navigator = "1A"
                 break
             if gameChoice.lower() in ListB:
@@ -373,13 +384,17 @@ Have fun sleeping tonight.
                 
 Really? You actually want to walk straight into a massacre 
 WITH the people DOING THE MASSACRING?
+
                 ''')
                 time.sleep(1)
                 print('''
                 
 Well, I suppose there's not much I can do to stop you.
 You ARE the one making the choices here, so I am legally obligated to let you commit mass murder. 
-Just don't expect me to narrate it!''')
+Just don't expect me to narrate it!
+
+''')
+                time.sleep(2)
                 Navigator = "1B"
                 break
             if gameChoice.lower() in ListC:
@@ -396,27 +411,50 @@ Just don't expect me to narrate it!''')
 
     elif str(Navigator) == "1A":
         print('''
-it freakin worked
+So, now that you've abandoned a town of farmers and refugees, what next?
+You can't go back to the Vinter Kin, not after THAT display of cowardice.
+
+You could always try to find a home out in the wilderness, although you'd be at risk if there's an ashfall.
+
+Alternatively, you could hit the road and hope you find people before people find you.
+
+        What's it gonna be?
+        
+        [A] Wilderness
+        
+        [B] Road
+        
+        [C] Vinter Kin
+        
+        
         ''')
+
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
                 print('''
-            
+
+Okay, but don't blame me if your lungs fill with volcanic cement. I don't write the rules, I just read them.
+
+
                 ''')
-                Navigator = "1"
+                time.sleep(1)
+                Navigator = "1AA"
                 break
             if gameChoice.lower() in ListB:
                 print('''
-            
+
+Allright! Road trip time!
                 ''')
-                Navigator = "1"
+                time.sleep(1)
+                Navigator = "1AB"
                 break
             if gameChoice.lower() in ListC:
                 print('''
             
                 ''')
-                Navigator = "1"
+                time.sleep(1)
+                Navigator = "1AC"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
