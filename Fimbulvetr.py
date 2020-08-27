@@ -444,17 +444,135 @@ Okay, but don't blame me if your lungs fill with volcanic cement. I don't write 
             if gameChoice.lower() in ListB:
                 print('''
 
-Allright! Road trip time!
+Alright! Road trip time!
+
+
+
                 ''')
                 time.sleep(1)
                 Navigator = "1AB"
                 break
             if gameChoice.lower() in ListC:
                 print('''
-            
+
+So you remember how, not five minutes ago, you abandoned and betrayed members of the very group you now want to return
+to? Just figured I'd mention that.
+
+
+
                 ''')
                 time.sleep(1)
                 Navigator = "1AC"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1AA":
+        print('''
+You continue driving, constantly on the look-out for anywhere that could provide enough shelter, like a cave or a 
+particularly dense cluster of trees. 
+
+After driving about 30 kilometers (Yes, I'm using the metric system. I'm not a monster.) northwest of that one town 
+where I lost all respect for you, a slight clearing in the trees to your left catches your attention. It seems to 
+be some sort of trail.
+
+        Pulling the jeep closer, you...
+        
+        [A] Hide the jeep and walk down the trail
+        
+        [B] Investigate the trail
+        
+        [C] Drive down the trail
+        
+        
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+
+Parking the jeep in a cluster of bushes, You take a bit of time covering the vehicle with branches and leaves until 
+you're... mildly confident with the make-shift camouflage. Looking over your handiwork once more, you set off down the
+trail.
+
+
+
+                ''')
+                time.sleep(1)
+                Navigator = "1AAA"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+
+"Before I just charge in," you rationalize, "I should probably make sure the path is safe."
+
+Taking a moment to investigate the path, you almost immediately spot the huge, muddy paw-prints of a bear. Knowing that 
+you'd be at a major disadvantage if you attempted to fight a bear in such a dense forest, you decide to keep looking. 
+
+
+ 
+                ''')
+                time.sleep(1)
+                Navigator = "1AAB"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+
+It's a tight fit, but you manage to get the jeep onto the trail. After about 10 minutes of driving, a spine-chilling 
+grind of metal on stone reverberates throughout the forest, and you realise you've hit a rock.
+
+
+                ''')
+                time.sleep(1)
+                Navigator = "1AAC"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1AAA":
+        print('''
+        
+You hike up the trail for a while, probably about 40 minutes, and you're starting to like your surroundings. 
+Nice trees, beautiful sky, you even passed a river so there's plenty of water.
+
+A crack in the bushes to your right startles you, and you spin around to see a brown bear twice your size.
+
+        You...
+        
+        [A] Run!
+        
+        [B] Punch it's snout into the stratosphere
+        ''')
+        if "Gun" in Items:
+            print("")
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                time.sleep(1)
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                time.sleep(1)
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                time.sleep(1)
+                Navigator = "1"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
