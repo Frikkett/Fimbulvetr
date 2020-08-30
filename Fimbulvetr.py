@@ -1,6 +1,7 @@
 import os
 import time
 import sys
+import random
 saveCheck = os.path.isdir('Fimbulvetr Save File')
 if saveCheck == False:
     os.mkdir('Fimbulvetr Save File')
@@ -25,6 +26,17 @@ no = list(["n","no","nop","nope","not","not really","not realy","no thanks","noo
 ListMenu = list(["menu", "list", "meu", "options", "men", "mnu"])
 Items = list([])
 itePast = list([])
+
+# Death Lists
+
+deadBear = list(['''The bear leaps on top of you, crushing your fragile skeleton underneath it's sheer weight. 
+The last thing you see before your heart stops is the glistening, drool-coated fangs of the bear presented in a snarl.
+
+You have died.''' , '''The bear stands up, towering over you. With a quick slash of its claws, the bear effortlessly slices your 
+major organs.
+
+You have died. '''])
+
 def printFun(w):
     for char in w:
         time.sleep(0.01)
@@ -316,6 +328,11 @@ while gameOn == 0:
 
     # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
 
+    if str(Navigator) == "XY":
+        deadNum = random.randint(0, 5)
+        print(dead___(deadNum))
+        gameOn = 1
+
     if str(Navigator) == "1":
         print('''
 On October 28th in the year 2020 an immense earthquake rocked the earth. Centered in north america, the quake 
@@ -549,27 +566,38 @@ A crack in the bushes to your right startles you, and you spin around to see a b
         
         [B] Punch it's snout into the stratosphere
         ''')
+        c = False
         if "Gun" in Items:
-            print("")
+            print('''
+        [C] Do what any sensible american man would do. Git yer gun.
+        
+        ''')
+            c = True
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
                 print('''
             
+You immediately whip around and bolt down the trail, trying to put as much distance between you and the bear. Such an 
+attempt is futile, however, as the bear is gaining on you. You turn a corner and find yourself at a dead end.
+
+Remember that village you doomed? Well now you're just as helpless as them.
+It's Karma time.
                 ''')
                 time.sleep(1)
-                Navigator = "1"
+                Navigator = "FB"
                 break
             if gameChoice.lower() in ListB:
                 print('''
             
+
                 ''')
                 time.sleep(1)
                 Navigator = "1"
                 break
-            if gameChoice.lower() in ListC:
+            if c is True and gameChoice.lower() in ListC:
                 print('''
-            
+        
                 ''')
                 time.sleep(1)
                 Navigator = "1"
