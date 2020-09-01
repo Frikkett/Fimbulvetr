@@ -638,13 +638,114 @@ Beyond the gate, It looks like there's an abandoned house of some kind.
                 print('''
 
 This is it. You've trained your whole today for this moment. You plunge your hands into the gap between two bars and, 
-screaming loud enough to make a boeing file a noise complaint, you widen the gap enough to just barely squeeze through. 
-Leaning on the gate, it swings open.
+screaming loud enough to make a boeing 747 file a noise complaint, you widen the gap enough to just barely squeeze through. 
+On the other side, sweating enough to flood a small town, (with water rather than bullets, this time.) you lean on the
+gate.
+
+As you put your full weight on the gate, It swings open.''')
+                time.sleep(5)
+                print('''
+
+Honestly I have no clue why you didn't just open the gate, after all it was never locked.
+
+
+                ''')
+                time.sleep(1)
+                Navigator = "1AAABA"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+
+You know what they say, the brain's like a muscle, and considering your muscles, you must have a pretty big brain.
+
+                ''')
+                time.sleep(1)
+                print("I'm just disappointed that THIS was the best plan you could come up with.")
+                time.sleep(1)
+                Navigator = "1AAABB"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1AAABA":
+        print('''
+        
+As you walk towards the house, the sky turns grey-er, and you pick up the pace. By the time you reach the front door, 
+you had begun sprinting. 
+
+Just in time, too, as the first specks of the Ashfall were just touching the ground. Pushing on the door, you find that
+it too is unlocked.
+
+To your surprise, however, it is NOT abandoned. 
+        ''')
+        time.sleep(5)
+        print('''
+Not by bears, anyway.''')
+        time.sleep(0.6)
+        print('''
+        
+Two more brown bears are sitting at a table, eating what looks to be porridge. One of them is roughly the same size 
+as the previous bear, although it's fur is a few shades darker. The other bear appears to be a cub of some kind.
+
+        You...
+        
+        [A] Properly operate these punching bags
+        
+        [B] Growl
+        
+        [C] sit down and eat with them 
+        
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+
+Looks like Papa Bear was just a warm up!
+
+Cracking your knuckles, you shift into an offensive stance. With a bar-bear-ic gleam in your eyes, you charge at Mama
+Bear and throw a punch, which she effortlessly catches.
+                ''')
+                input("press [ENTER] to continue")
+                print('''
+
+Mama Bear rises from her chair to tower over you.
+
+"So," she whispers, "I take it YOU'RE the one who defeated MY Robearto?"
+
+"And what if I did?" you reply.
+''')
+                input("press [ENTER] to continue")
+                print('''
+She snarls and, grabbing you by the arm, swings you into the air and back down again like a certain green rage monster
+that I can't name because copyright.
+
+You leap on to your feet and twist out of her grip, only to receive a sharp blow to the head. Mama bear follows up with
+a series of quick strikes to the head and lower torso, although you manage to dodge more than a few of her attacks. 
+                ''')
+                input("press [ENTER] to continue")
+                print('''
+"Have you figured it out yet?" Mama bear growls, "I'm no ordinary bear. I've been trained in the ancient ways of 
+Bear-zilian Griz-jitsu, You stand no chance!"
+
+As a response to her claim, you charge into her like a bull, tackling her through the nearest wall.
+                ''')
+                input("press [ENTER] to continue")
+                print('''
+                ''')
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
                 ''')
                 time.sleep(1)
                 Navigator = "1"
                 break
-            if gameChoice.lower() in ListB:
+            if gameChoice.lower() in ListC:
                 print('''
             
                 ''')
@@ -656,7 +757,6 @@ Leaning on the gate, it swings open.
                 break
             else:
                 print("Please select an actual option.")
-
 
     elif str(Navigator) == "FB":
         deadNum = random.randint(0, 2)
