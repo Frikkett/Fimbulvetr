@@ -5,9 +5,6 @@ import random
 saveCheck = os.path.isdir('Fimbulvetr Save File')
 if saveCheck == False:
     os.mkdir('Fimbulvetr Save File')
-print("Hvat segirthu?")
-print("Cause I'm doin fine")
-print("Although I will say the Fimbulvetr is quite annoying, what with all the ashfall")
 
 # Global Variables
 inGame = False
@@ -35,12 +32,11 @@ The last thing you see before your heart stops is the glistening, drool-coated f
 You have died.''' , '''The bear stands up, towering over you. With a quick slash of its claws, the bear effortlessly slices your 
 major organs.
 
-You have died. '''])
+You have died. ''' , '''The bear charges into you, snapping it's jaws shut around your stomach. You fall backwards and 
+slowly lose consciousness.
+ 
+ You have died. '''])
 
-def printFun(w):
-    for char in w:
-        time.sleep(0.01)
-        print(char, end='')
 
 def repLine(numLine, chaVar):
     global theGame
@@ -271,13 +267,15 @@ segCheck = open(theGame,"r")
 Navi = str(segCheck.readline().strip())
 Navigator =str(Navi)
 segCheck.close()
+
 with open(theGame,"r") as segCheck:
     for line in segCheck:
         line = line.strip()
         Items.append(line)
         itePast.append(line)
+
 navPast = str(Navigator)
-print(Navigator)
+print(" Hint: You can type 'Menu' into any typing prompt during the game to open the menu.")
 while gameOn == 0:
     if navPast != Navigator:
         Navigatord = str(Navigator)
@@ -327,11 +325,14 @@ while gameOn == 0:
                 print("Please select an actual option.")
 
     # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
+    # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR DEATH.
 
     if str(Navigator) == "XY":
         deadNum = random.randint(0, 5)
         print(dead___(deadNum))
         gameOn = 1
+
+    # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR DEATH.
 
     if str(Navigator) == "1":
         print('''
@@ -527,7 +528,7 @@ trail.
 "Before I just charge in," you rationalize, "I should probably make sure the path is safe."
 
 Taking a moment to investigate the path, you almost immediately spot the huge, muddy paw-prints of a bear. Knowing that 
-you'd be at a major disadvantage if you attempted to fight a bear in such a dense forest, you decide to keep looking. 
+you'd be at a major disadvantage if you attempted to fight a bear in such a dense forest, you decide to look somewhere else. 
 
 
  
@@ -569,7 +570,7 @@ A crack in the bushes to your right startles you, and you spin around to see a b
         c = False
         if "Gun" in Items:
             print('''
-        [C] Do what any sensible american man would do. Git yer gun.
+        [C] Do what any sensible American man would do. Git yer gun.
         
         ''')
             c = True
@@ -589,15 +590,63 @@ It's Karma time.
                 break
             if gameChoice.lower() in ListB:
                 print('''
-            
+
+Oh okay, I get it. You thought that this option was a joke, or that I was exaggerating when I said "stratosphere."
+
+I wasn't. 
+
+With the might of a hundred ridiculously overpowered protagonists, you whapp the bear on the nose so forcefully that
+it causes the laws of physics to do a double take and the bear rockets into the sky like a fluffy meteorite in reverse.
 
                 ''')
                 time.sleep(1)
-                Navigator = "1"
+                Navigator = "1AAAB"
                 break
             if c is True and gameChoice.lower() in ListC:
                 print('''
         
+Looks like we got ourselves a good 'Ol canadian stand off.
+
+
+                ''')
+                time.sleep(1)
+                Navigator = "1AAAC"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1AAAB":
+        print('''
+        
+So, now that you've enlisted Americas first ever Astro-Bear, you continue down the road. You continue the hike for a 
+good 4 kilometres, until you finally arrive at an imposing iron gate, complete with plenty of barbs and pointy bits.
+
+Beyond the gate, It looks like there's an abandoned house of some kind.
+
+        You...
+        
+        [A] Use your overwhelming, bear-a-pulting strength to wrench apart the bars
+        
+        [B] climb up a tree and leap over the gate
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+
+This is it. You've trained your whole today for this moment. You plunge your hands into the gap between two bars and, 
+screaming loud enough to make a boeing file a noise complaint, you widen the gap enough to just barely squeeze through. 
+Leaning on the gate, it swings open.
+                ''')
+                time.sleep(1)
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
                 ''')
                 time.sleep(1)
                 Navigator = "1"
@@ -607,3 +656,9 @@ It's Karma time.
                 break
             else:
                 print("Please select an actual option.")
+
+
+    elif str(Navigator) == "FB":
+        deadNum = random.randint(0, 2)
+        print(deadBear[deadNum])
+        gameOn = 1
