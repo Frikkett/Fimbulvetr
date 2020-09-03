@@ -557,7 +557,7 @@ grind of metal on stone reverberates throughout the forest, and you realise you'
         print('''
         
 You hike up the trail for a while, probably about 40 minutes, and you're starting to like your surroundings. 
-Nice trees, beautiful sky, you even passed a river so there's plenty of water.
+You're in a wide valley, nice trees, beautiful sky, you even passed a river so there's plenty of water.
 
 A crack in the bushes to your right startles you, and you spin around to see a brown bear twice your size.
 
@@ -638,7 +638,7 @@ Beyond the gate, It looks like there's an abandoned house of some kind.
                 print('''
 
 This is it. You've trained your whole today for this moment. You plunge your hands into the gap between two bars and, 
-screaming loud enough to make a boeing 747 file a noise complaint, you widen the gap enough to just barely squeeze through. 
+screaming loud enough to make a boeing 747 file a noise complaint, you widen the gap enough to just bear-ly squeeze through. 
 On the other side, sweating enough to flood a small town, (with water rather than bullets, this time.) you lean on the
 gate.
 
@@ -656,7 +656,7 @@ Honestly I have no clue why you didn't just open the gate, after all it was neve
             if gameChoice.lower() in ListB:
                 print('''
 
-You know what they say, the brain's like a muscle, and considering your muscles, you must have a pretty big brain.
+You know what they say, the brain's like a muscle, and considering your impossible muscles, you must have a pretty big brain.
 
                 ''')
                 time.sleep(1)
@@ -676,8 +676,10 @@ You know what they say, the brain's like a muscle, and considering your muscles,
 As you walk towards the house, the sky turns grey-er, and you pick up the pace. By the time you reach the front door, 
 you had begun sprinting. 
 
-Just in time, too, as the first specks of the Ashfall were just touching the ground. Pushing on the door, you find that
-it too is unlocked.
+Just in time, too, as the first specks of the Ashfall were just touching the ground. A rusted plaque on the door 
+reads: "Bear House"
+
+Pushing on the door, you find that it too is unlocked.
 
 To your surprise, however, it is NOT abandoned. 
         ''')
@@ -714,28 +716,93 @@ Bear and throw a punch, which she effortlessly catches.
 
 Mama Bear rises from her chair to tower over you.
 
-"So," she whispers, "I take it YOU'RE the one who defeated MY Robearto?"
+"So," she whispers, "I take it YOU'RE the one who defeated MY Ro-bear-to?"
 
 "And what if I did?" you reply.
+
 ''')
                 input("press [ENTER] to continue")
                 print('''
 She snarls and, grabbing you by the arm, swings you into the air and back down again like a certain green rage monster
-that I can't name because copyright.
+I can't name because copyright.
 
-You leap on to your feet and twist out of her grip, only to receive a sharp blow to the head. Mama bear follows up with
+You leap on to your feet and twist out of her grip, only to receive a sharp blow to the head. Mama Bear follows up with
 a series of quick strikes to the head and lower torso, although you manage to dodge more than a few of her attacks. 
                 ''')
                 input("press [ENTER] to continue")
                 print('''
-"Have you figured it out yet?" Mama bear growls, "I'm no ordinary bear. I've been trained in the ancient ways of 
+"Have you figured it out yet?" Mama Bear growls, "I'm no ordinary bear. I've been trained in the ancient ways of 
 Bear-zilian Griz-jitsu, You stand no chance!"
 
-As a response to her claim, you charge into her like a bull, tackling her through the nearest wall.
+As a response to her claim you charge into her like a bull, tackling her through the nearest wall.
                 ''')
                 input("press [ENTER] to continue")
                 print('''
+You continue charging forwards, crashing through trees and walls. Mama Bear plants her feet, grabs onto your sides, 
+and lifts you over her head.
+
+"THIS, is for my wallpaper," Mama Bear hisses as she slams your spine into her knee, "THIS, is for my trees," she snaps as
+she rolls you into a ball and chucks your aching body high into the air. 
+
+"And THIS," Mama Bear shouts, her voice frothing with rage, as she leaps up to meet you, "IS FOR ROBEARTO!!!"
+Mama Bear proceeds to volleyball slap you straight into the nearest mountain, which happens to be right behind the Bear
+House.
+          ''')
+                input("press [ENTER] to continue")
+                Navigator = "1AAABAA"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+You bare your teeth and growl.
+
+The larger bear, who you soon learn is Mama Bear Bear-a-trice, growls back.
+
+You growl again. Bearatrice growls back, but with an edge of interest. You growl about your day. Bearatrice growls 
+about hers. The cub, Bear-naby, growls about the eccentric intricacies in the local woodland politics. You growl
+out a joke about honeybees, causing all of you to laugh. You follow it up with a joke you've been working on all day,
+about that bear you sent flying. 
+
+It takes three whole seconds of silence for you to realise your mistake.
+
+You hurriedly try to growl out an apology, but Bearatrice isn't having any of it. She stands up.
                 ''')
+                time.sleep(1)
+                Navigator = "FB"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                time.sleep(1)
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1AAABAA":
+        print('''
+
+Pulling yourself up from the rubble of the small crater you made in the mountain, you can make out Mama Bear bounding
+across the valley towards you at an alarming speed.
+
+        You...
+        
+        [A] 
+        
+        [B] 
+        
+        [C]
+                ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                time.sleep(1)
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListB:
@@ -757,6 +824,8 @@ As a response to her claim, you charge into her like a bull, tackling her throug
                 break
             else:
                 print("Please select an actual option.")
+
+
 
     elif str(Navigator) == "FB":
         deadNum = random.randint(0, 2)
