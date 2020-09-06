@@ -301,21 +301,21 @@ while gameOn == 0:
                 print('''
             
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListB:
                 print('''
             
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListC:
                 print('''
             
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListMenu:
@@ -394,7 +394,7 @@ Have fun sleeping tonight.
 
 
                 ''')
-                time.sleep(2)
+                input("press [ENTER] to continue")
                 Navigator = "1A"
                 break
             if gameChoice.lower() in ListB:
@@ -404,7 +404,7 @@ Really? You actually want to walk straight into a massacre
 WITH the people DOING THE MASSACRING?
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 print('''
                 
 Well, I suppose there's not much I can do to stop you.
@@ -412,7 +412,7 @@ You ARE the one making the choices here, so I am legally obligated to let you co
 Just don't expect me to narrate it!
 
 ''')
-                time.sleep(2)
+                input("press [ENTER] to continue")
                 Navigator = "1B"
                 break
             if gameChoice.lower() in ListC:
@@ -456,7 +456,7 @@ Okay, but don't blame me if your lungs fill with volcanic cement. I don't write 
 
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AA"
                 break
             if gameChoice.lower() in ListB:
@@ -467,7 +467,7 @@ Alright! Road trip time!
 
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AB"
                 break
             if gameChoice.lower() in ListC:
@@ -479,7 +479,7 @@ to? Just figured I'd mention that.
 
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AC"
                 break
             if gameChoice.lower() in ListMenu:
@@ -519,7 +519,7 @@ trail.
 
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AAA"
                 break
             if gameChoice.lower() in ListB:
@@ -533,7 +533,7 @@ you'd be at a major disadvantage if you attempted to fight a bear in such a dens
 
  
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AAB"
                 break
             if gameChoice.lower() in ListC:
@@ -544,7 +544,7 @@ grind of metal on stone reverberates throughout the forest, and you realise you'
 
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AAC"
                 break
             if gameChoice.lower() in ListMenu:
@@ -585,7 +585,7 @@ attempt is futile, however, as the bear is gaining on you. You turn a corner and
 Remember that village you doomed? Well now you're just as helpless as them.
 It's Karma time.
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "FB"
                 break
             if gameChoice.lower() in ListB:
@@ -599,7 +599,7 @@ With the might of a hundred ridiculously overpowered protagonists, you whapp the
 it causes the laws of physics to do a double take and the bear rockets into the sky like a fluffy meteorite in reverse.
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AAAB"
                 break
             if c is True and gameChoice.lower() in ListC:
@@ -609,7 +609,7 @@ Looks like we got ourselves a good 'Ol canadian stand off.
 
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AAAC"
                 break
             if gameChoice.lower() in ListMenu:
@@ -642,26 +642,29 @@ screaming loud enough to make a boeing 747 file a noise complaint, you widen the
 On the other side, sweating enough to flood a small town, (with water rather than bullets, this time.) you lean on the
 gate.
 
-As you put your full weight on the gate, It swings open.''')
-                time.sleep(5)
+As you put your full weight on the gate, It swings open.
+''')
+                input("press [ENTER] to continue")
                 print('''
 
 Honestly I have no clue why you didn't just open the gate, after all it was never locked.
 
 
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1AAABA"
                 break
             if gameChoice.lower() in ListB:
                 print('''
 
-You know what they say, the brain's like a muscle, and considering your impossible muscles, you must have a pretty big brain.
+You know what they say, the brain's like a muscle. Considering your impossible muscles, you must have a pretty big brain.
 
                 ''')
-                time.sleep(1)
-                print("I'm just disappointed that THIS was the best plan you could come up with.")
-                time.sleep(1)
+                input("press [ENTER] to continue")
+                print('''
+I'm just disappointed that THIS was the best plan you could come up with.
+                ''')
+                input("press [ENTER] to continue")
                 Navigator = "1AAABB"
                 break
             if gameChoice.lower() in ListMenu:
@@ -683,10 +686,11 @@ Pushing on the door, you find that it too is unlocked.
 
 To your surprise, however, it is NOT abandoned. 
         ''')
-        time.sleep(5)
+        input("press [ENTER] to continue")
         print('''
-Not by bears, anyway.''')
-        time.sleep(0.6)
+Not by bears, anyway.
+''')
+        input("press [ENTER] to continue")
         print('''
         
 Two more brown bears are sitting at a table, eating what looks to be porridge. One of them is roughly the same size 
@@ -766,15 +770,23 @@ It takes three whole seconds of silence for you to realise your mistake.
 
 You hurriedly try to growl out an apology, but Bearatrice isn't having any of it. She stands up.
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "FB"
                 break
             if gameChoice.lower() in ListC:
                 print('''
-            
+You hang up your coat on a nearby rack, sit down at the table, and grab an unclaimed bowl of porridge.
+Mama bear and cub bear abruptly stop eating to stare directly at you, both of them looking more confused than an airplane pilot
+who just received a parking violation mid-flight.
+
+The two bears glance at one another, nod, and lunge across the table at you.
                 ''')
-                time.sleep(1)
-                Navigator = "1"
+                input("press [ENTER] to continue")
+                print('''
+Did you SERIOUSLY expect that to work?
+''')
+                input("press [ENTER] to continue")
+                Navigator = "FB"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -790,11 +802,11 @@ across the valley towards you at an alarming speed.
 
         You...
         
-        [A] 
+        [A] Hurl the rocky rubble at Mama Bear! 
         
-        [B] 
+        [B] Call Upon your ungodly Bar-bear-ian prowess
         
-        [C]
+        [C] 
                 ''')
         while True:
             gameChoice = str(input(""))
@@ -802,21 +814,21 @@ across the valley towards you at an alarming speed.
                 print('''
             
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListB:
                 print('''
             
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListC:
                 print('''
             
                 ''')
-                time.sleep(1)
+                input("press [ENTER] to continue")
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListMenu:
