@@ -1,17 +1,24 @@
+# Importing all of the resources required
 import os
 import time
-import sys
 import random
+# a small bit of code to create the save folder if none exist.
 saveCheck = os.path.isdir('Fimbulvetr Save File')
 if saveCheck == False:
     os.mkdir('Fimbulvetr Save File')
 
 # Global Variables
+
+# inGame - the variable that determines whether or not the user is currently playing the game or just at the starting menu
 inGame = False
-theGame = "hi"
 
-# Function Definitions
+# theGame - the variable that stores the name of the user-chosen save file.
+theGame = str()
 
+# List Definitions
+
+# Error Prevention Lists - These lists contain multiple variations of similar possible inputs. This helps to mitigate any possible
+# Input Errors by providing a much wider range of possibilities that all have the same meaning.
 ListA = list(["a",'"a"'," a","a "])
 ListB = list(["b",'"b"'," b","b "])
 ListC = list(["c",'"c"'," c","c "])
@@ -21,10 +28,13 @@ lexit = (["exit", "break", "kill", "die", "leave", " exit", "exit ", "ext", "exi
 yes = list(["y","yes","ye","ys","yes "," yes","sure","sur","sre","ure","yeah","yea","yeh","yah","eah","yup","yip","yes please","absolutely","yep"])
 no = list(["n","no","nop","nope","not","not really","not realy","no thanks","noo","nooo","noooo","nooooo","never","nno","nnoo"])
 ListMenu = list(["menu", "list", "meu", "options", "men", "mnu"])
+
+# Item Lists - these lists are used to read and store in-game "items" from the user-chosen save file.
 Items = list([])
 itePast = list([])
 
-# Death Lists
+# Death Lists - these provide variation to the possible ways for the player-character to die, making repetitive death-text
+# more interesting.
 
 deadBear = list(['''The bear leaps on top of you, crushing your fragile skeleton underneath it's sheer weight. 
 The last thing you see before your heart stops is the glistening, drool-coated fangs of the bear presented in a snarl.
@@ -37,22 +47,38 @@ slowly lose consciousness.
  
  You have died. '''])
 
+# Function Definitions
 
-def repLine(numLine, chaVar):
+# repLine - This function takes two parameters, the number of the desired line and the desired text.
+#           The function then clears the desired line and replaces it with the desired text.
+
+def repLine(numLine, changeTxt):
     global theGame
-    write = open(theGame, 'r').readlines()
-    wrote = chaVar + "\n"
-    write[numLine] = str(wrote)
-    writer = open(theGame, 'w')
-    writer.writelines(write)
-    writer.close()
+    gameLines = open(theGame, 'r').readlines()
+    lineReplace = changeTxt + "\n"
+    gameLines[numLine] = str(lineReplace)
+    newLines = open(theGame, 'w')
+    newLines.writelines(gameLines)
+    newLines.close()
 
+# Menu - This function is the ENTIRE game menu, with all of the options and possible uses of the menu. This function
+#        allows the user to create, delete, and load files, as well as exit the game or the menu.
+#        This function is arguably the most complex part of the entire program.
 
 def Menu(inGame):
     menuStay = 0
     menuUp = 0
+
+    # Defining all required lists and variables as global, so that the function can access them.
+
     global ListA
+    global ListB
+    global ListC
+    global ListD
     global theGame
+    global yes
+    global no
+    global lexit
     while menuUp == 0:
         print(r'''
         ()=============================================================================================================()
@@ -96,16 +122,22 @@ def Menu(inGame):
         
         ''')
         while menuStay == 0:
+            # loadLoop determines whether the load option loops or not
             loadLoop = 0
+            # deadLoop determines whether the delete option loops or not
             deadLoop = 0
             menuChoice = str(input('''
 ==='''))
             if menuChoice.lower() in ListA:
+                # Opens the directory 'Fimbulvetr Save File'
                 optionsCheck = os.listdir('Fimbulvetr Save File')
+                # counts the number of files in the directory
                 optionsNum = len(optionsCheck)
                 if optionsNum == 0:
+                    # Returns a message if there are no files
                     print("I'm sorry, it appears that there are no save files on this computer.")
                 else:
+                    # Returns the number of files in the directory, and prints the names of the files for the user to see
                     print("There are {} saved files on this computer. they are:".format(optionsNum))
                     print(optionsCheck)
                     print('''
@@ -113,13 +145,16 @@ Please enter the name of the file you would like to load, or type "cancel" to ca
                     while loadLoop == 0:
                         loadName = str(input("==="))
                         loadTxt = loadName + ".txt"
+                        # checks to see if the user's input is a valid file option
                         if loadName in optionsCheck:
                             while True:
+                                # asks for the user's confirmation
                                 print("Are you sure you want to load {}?".format(loadName))
                                 loadSure = input("Yes/No:")
                                 if loadSure.lower() in yes:
                                     print('''
 Loading {}.'''.format(loadName))
+                                    # Sets the value of theGame and breaks all function loops.
                                     theGame = "Fimbulvetr Save File/" + loadName
                                     menuStay = 1
                                     menuUp = 1
@@ -130,12 +165,15 @@ Loading {}.'''.format(loadName))
                                     loadLoop = 1
                                     break
                         elif loadTxt in optionsCheck:
+                            # checks to see if the user's input with .txt at the end is a valid file option
                             while True:
+                                # asks for the user's confirmation
                                 print("Are you sure you want to load {}?".format(loadTxt))
                                 loadSure = input("Yes/No:")
                                 if loadSure.lower() in yes:
                                     print('''
 Loading {}.'''.format(loadTxt))
+                                    # Sets the value of theGame and breaks all function loops.
                                     theGame = "Fimbulvetr Save File/" + loadTxt
                                     menuStay = 1
                                     menuUp = 1
@@ -154,6 +192,7 @@ Loading {}.'''.format(loadTxt))
             elif menuChoice.lower() in ListB:
                 makeTry = True
                 while makeTry == True:
+                    # Asks the user for a name for their save file
                     print("What would you like to call your game? (type 'Cancel' to exit)")
                     gameName = str(input())
                     gameDef = "Fimbulvetr Save File/" + gameName + ".txt"
@@ -162,6 +201,7 @@ Loading {}.'''.format(loadTxt))
                             print("Cancelled.")
                             makeTry = False
                         else:
+                            # Fills the new file with all of the basic essentials
                             makeNew = open(gameDef, "x")
                             makeNew.close()
                             makeNew = open(gameDef, "a")
@@ -183,11 +223,15 @@ Please Enjoy the game.''')
                         print("This name is already in use. Please choose a different name.")
 
             elif menuChoice.lower() in ListC:
+                # Opens the directory 'Fimbulvetr Save File'
                 optionsCheck = os.listdir('Fimbulvetr Save File')
+                # counts the number of files in the directory
                 optionsNum = len(optionsCheck)
                 if optionsNum == 0:
+                    # Returns a message if there are no files
                     print("I'm sorry, it appears that there are no save files on this computer.")
                 else:
+                    # Returns the number of files in the directory, and prints the names of the files for the user to see
                     print("There are {} saved files on this computer. they are:".format(optionsNum))
                     print(optionsCheck)
                     print('''
@@ -195,8 +239,10 @@ Please enter the name of the file you would like to EXTERMINATE, or type "cancel
                     while deadLoop == 0:
                         deadName = str(input("==="))
                         deadTxt = deadName + ".txt"
+                        # checks to see if the user's input is a valid file option
                         if deadName in optionsCheck:
                             while True:
+                                # checks for the user's confirmation
                                 print("Are you ABSOLUTELY SURE you want to EXTERMINATE {}?".format(deadName))
                                 deadSure = input("Yes/No:")
                                 if deadSure.lower() in yes:
@@ -204,7 +250,7 @@ Please enter the name of the file you would like to EXTERMINATE, or type "cancel
 Exterminate!''')
                                     time.sleep(0.2)
                                     print('''
- Exterminate!''')
+Ex-ter-min-ate!!''')
                                     time.sleep(0.2)
                                     print('''
 ...''')
@@ -212,6 +258,7 @@ Exterminate!''')
                                     print('''
 {} Exterminated.'''.format(deadName))
                                     deleteName = "Fimbulvetr Save File/" + deadName
+                                    # Deletes the save file.
                                     os.remove(deleteName)
                                     deadLoop = 1
                                     break
@@ -220,7 +267,9 @@ Exterminate!''')
                                     deadLoop = 1
                                     break
                         elif deadTxt in optionsCheck:
+                            # checks to see if the user's input with .txt at the end is a valid file option
                             while True:
+                                # asks for the user's confirmation
                                 print("Are you ABSOLUTELY SURE you want to EXTERMINATE {}?".format(deadTxt))
                                 deadSure = input("Yes/No:")
                                 if deadSure.lower() in yes:
@@ -236,6 +285,7 @@ Exterminate!''')
                                     print('''
 {} Exterminated.'''.format(deadTxt))
                                     deleteName = "Fimbulvetr Save File/" + deadTxt
+                                    # Deletes the save file.
                                     os.remove(deleteName)
                                     deadLoop = 1
                                     break
@@ -250,22 +300,24 @@ Exterminate!''')
                             print("Please type an actual option from the list.")
             elif menuChoice.lower() in ListD:
                 print("Returning to game...")
+                # Returns to game
                 menuUp = 1
                 menuStay = 1
             elif menuChoice.lower() in lexit:
                 print("Exiting Program.")
+                # Exits the program
                 exit()
             else:
                 print("Type an actual option please.")
 
 
 # MainGame Loop
-
+# opens the start menu
 Menu(False)
 gameOn = 0
 segCheck = open(theGame,"r")
 Navi = str(segCheck.readline().strip())
-Navigator =str(Navi)
+Navigator = str(Navi)
 segCheck.close()
 
 with open(theGame,"r") as segCheck:
@@ -804,17 +856,23 @@ across the valley towards you at an alarming speed.
         
         [A] Hurl the rocky rubble at Mama Bear! 
         
-        [B] Call Upon your ungodly Bar-bear-ian prowess
+        [B] Call upon your ungodly Bar-bear-ian prowess
         
-        [C] 
+        [C] Laser Eyes!
                 ''')
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
                 print('''
-            
+You stare directly at the rubble, imagining it as lumpy, petrified bears. You heft two boulders, each twice your size, 
+and hurl them towards Mama Bear.
                 ''')
                 input("press [ENTER] to continue")
+                print('''
+Mama Bear charges straight through the first boulder, shattering it. Granite chunks and debris spray out behind her as
+she continues her murderous rampage. The second boulder flies at her fast, but Mama Bear just leaps onto it, using it
+like a spring board to propel towards you.
+                ''')
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListB:
