@@ -856,7 +856,7 @@ across the valley towards you at an alarming speed.
         
         [A] Hurl the rocky rubble at Mama Bear! 
         
-        [B] Call upon your ungodly Bar-bear-ian prowess
+        [B] Call upon your ungodly Bar-bear-ian prowess!
         
         [C] Laser Eyes!
                 ''')
@@ -873,20 +873,40 @@ Mama Bear charges straight through the first boulder, shattering it. Granite chu
 she continues her murderous rampage. The second boulder flies at her fast, but Mama Bear just leaps onto it, using it
 like a spring board to propel towards you.
                 ''')
-                Navigator = "1"
+                input("press [ENTER] to continue")
+                print('''
+You brace for impact as Mama Bear crashes into you, pushing you back a solid 5 meters. Mama Bear rears back to slash, 
+but you interrupt her with a cringe-inducing punch to the gut. The impact of your strike echos through the valley, and 
+Mama Bear doubles over in agony.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1AAABAAA"
                 break
             if gameChoice.lower() in ListB:
                 print('''
-            
+You bare your teeth and snarl. Who does this bear think she is? How could she have the AUDACITY to fight a mighty, 
+over-bear-ing lord such as yourself? You leap straight at Mama Bear in a blind fury, the only thing you care about
+right now is disposing of the problem in front of you.
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1"
+                print('''
+Unfortunately, you don't notice the problem BEHIND you.
+                ''')
+                input("press [ENTER] to continue")
+                print('''
+The Cub bear soars out of the Bear House at lightning fast speeds, biting into the back of your neck. This catches 
+you off guard, and in your brief moment of hesitation, Mama bear lunges in with a lethal swipe to the chest.
+                ''')
+                Navigator = "FCB"
                 break
             if gameChoice.lower() in ListC:
                 print('''
-            
+Well, if you can punt a bear to the moon then who's to say you CAN'T shoot lasers?
                 ''')
                 input("press [ENTER] to continue")
+                print('''
+
+                ''')
                 Navigator = "1"
                 break
             if gameChoice.lower() in ListMenu:
