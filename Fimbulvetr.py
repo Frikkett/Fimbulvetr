@@ -540,6 +540,145 @@ to? Just figured I'd mention that.
             else:
                 print("Please select an actual option.")
 
+    elif str(Navigator) == "1AB":
+        print('''
+You drive along the narrow abandoned street, listening to your music at full volume when you come to an old piece of
+cracked, mostly obliterated road.
+
+There are no signs telling you where your options lie
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+To your left lies a mostly overgrown, partly dirt road that looks like it could lead to something.
+There is an almost untouched street to your right, with trimmed bushes, and beautiful houses.
+The road to your front is.... well.... kinda half gone.
+
+Not like covered or anything.
+
+More like fell from a landslide.
+
+        So, where do you go?
+        
+        [A] Left
+        
+        [B] Forward
+        
+        [C] Right
+        
+        
+        
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+Left... Ok then, it's your funeral.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1ABA"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1ABB"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1ABC"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1ABA":
+        print('''
+You drive along the track to what looks like an abandoned scrapyard. There are old cars, trucks and even a couple of
+classic motorcycles to your disappointment.
+                ''')
+        input("press [ENTER] to continue")
+        print('''
+Your jeep is looking a bit.. battered, if I must say.
+
+And in complete honesty, I'm surprised its still running...
+
+        What's the plan?
+        
+        [A] Go into the scrapyard in search of a new ride
+        
+        [B] Salvage the vehicles there to repair your jeep
+        
+        [C] Summon a 4.8L supercharged DOHC V8 engine to replace your current engine
+                ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1ABAA"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1ABAB"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1ABAC"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1ABAA":
+        print('''
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!DIE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+                
+
     elif str(Navigator) == "1AA":
         print('''
 You continue driving, constantly on the look-out for anywhere that could provide enough shelter, like a cave or a 
