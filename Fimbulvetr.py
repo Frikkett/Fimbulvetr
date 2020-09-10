@@ -47,6 +47,20 @@ slowly lose consciousness.
  
  You have died. '''])
 
+deadDog = list(['''The dogs pounce on you and tear apart your flesh with their jaws. Your last sight is seeing one of the dogs
+chomping down on your face...
+
+You have died''' , '''The dogs surround you. There's no chance you'll survive despite your (non-existent) survival
+skills. They eventually overpower you when their owner walks over to you with his gun loaded.
+
+*BANG!*
+
+You have died''' , '''You decide to ride away from the dogs. The motorcycle is fast, and you lose control quickly, sending
+you directly into a powerpole. The voltage running through the pole is redirected into the fuel tank of your motorcycle,
+and the resulting fireball incinerates your already mutilated body.
+
+You have died'''])
+
 # Function Definitions
 
 # repLine - This function takes two parameters, the number of the desired line and the desired text.
@@ -206,7 +220,6 @@ Loading {}.'''.format(loadTxt))
                             makeNew.close()
                             makeNew = open(gameDef, "a")
                             makeNew.write("1\n")
-                            makeNew.write('Gun\n')
                             makeNew.write('knife\n')
                             makeNew.write('bread\n')
                             makeNew.write('wallet\n')
@@ -620,10 +633,31 @@ And in complete honesty, I'm surprised its still running...
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
                 print('''
+Nice, time for a new ride. Can't say it'll be amazing, but it'll be something.
+
 
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1ABAA"
+                print('''
+You waddle around the various vehicles and parts, examining them in their non-existent glory. There is a bright red
+motorcycle that catches your eye, with its massive blastpipes and lack of muffler, it's perfect.
+
+Just keep the volume down. There are dogs sleeping nearby that look sorta dangerous...
+                ''')
+                input("press [ENTER] to continue")
+                print('''
+You sit down on the seat, and to your joy, the keys are in. You turn the key, and it roars to life with massive pink
+flames roaring out the pipes...
+
+Pink? What...
+
+Then the stereo starts playing children's music at full volume
+
+Why does it have a stereo? That's weird, but either way, now there's a bunch of dogs you've woken up that are rushing
+to eat you. I hope you feel stupid.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FD"
                 break
             if gameChoice.lower() in ListB:
                 print('''
@@ -645,9 +679,56 @@ And in complete honesty, I'm surprised its still running...
             else:
                 print("Please select an actual option.")
 
-    elif str(Navigator) == "1ABAA":
+    elif str(Navigator) == "1ABB":
         print('''
-        !!!!!!!!!!!!!!!!!!!!!!!!!!!DIE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+You aren't very certain that even if you drive safely over this semi consumed road you'll make it over, so you step on
+it. The jeep somehow accelerates to its top speed of 450km/h in the space of a couple metres. How the G-forces didn't
+shred you, I have no clue.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+You drive straight over the gaps in the road at stupidly high speeds when the road ends.
+
+It just ends.
+
+You hit a solid barrier at speed and get sent out the front window. You dolphin dive a few km, passing a nearby plane at
+a great altitude
+        ''')
+        #ADD A SEGMENT WHERE YOU GET A GUN, THEN LEAD BACK TO 1AAA
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+
+    elif str(Navigator) == "1ABAB":
+        print('''
+You find various pieces of scrap metal to repair your jeep, and over the course of a couple of minutes you make your
+once battered unit of a car into a pristine luxury off road vehicle. How did that take a few minutes exactly?
         ''')
         while True:
             gameChoice = str(input(""))
@@ -677,7 +758,6 @@ And in complete honesty, I'm surprised its still running...
                 break
             else:
                 print("Please select an actual option.")
-                
 
     elif str(Navigator) == "1AA":
         print('''
@@ -1059,4 +1139,9 @@ Well, if you can punt a bear to the moon then who's to say you CAN'T shoot laser
     elif str(Navigator) == "FB":
         deadNum = random.randint(0, 2)
         print(deadBear[deadNum])
+        gameOn = 1
+
+    elif str(Navigator) == "FD":
+        deadNum = random.randint(0, 2)
+        print(deadDog[deadNum])
         gameOn = 1
