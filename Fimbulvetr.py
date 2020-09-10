@@ -551,7 +551,7 @@ There are no signs telling you where your options lie
         print('''
 To your left lies a mostly overgrown, partly dirt road that looks like it could lead to something.
 There is an almost untouched street to your right, with trimmed bushes, and beautiful houses.
-The road to your front is.... well.... kinda half gone.
+The road to your front is half gone.
 
 Not like covered or anything.
 
@@ -600,13 +600,13 @@ Left... Ok then, it's your funeral.
     elif str(Navigator) == "1ABA":
         print('''
 You drive along the track to what looks like an abandoned scrapyard. There are old cars, trucks and even a couple of
-classic motorcycles to your disappointment.
+classic motorcycles, to your disappointment.
                 ''')
         input("press [ENTER] to continue")
         print('''
 Your jeep is looking a bit.. battered, if I must say.
 
-And in complete honesty, I'm surprised its still running...
+And in complete honesty, I'm surprised it's still running...
 
         What's the plan?
         
@@ -995,7 +995,7 @@ across the valley towards you at an alarming speed.
         
         [A] Hurl the rocky rubble at Mama Bear! 
         
-        [B] Call upon your ungodly Bar-bear-ian prowess!
+        [B] Show these puny bears who's in charge!
         
         [C] Laser Eyes!
                 ''')
@@ -1023,7 +1023,7 @@ Mama Bear doubles over in agony.
                 break
             if gameChoice.lower() in ListB:
                 print('''
-You bare your teeth and snarl. Who does this bear think she is? How could she have the AUDACITY to fight a mighty, 
+You bear your teeth and snarl. Who does this bear think she is? How could she have the AUDACITY to fight a mighty, 
 over-bear-ing lord such as yourself? You leap straight at Mama Bear in a blind fury, the only thing you care about
 right now is disposing of the problem in front of you.
                 ''')
@@ -1036,6 +1036,7 @@ Unfortunately, you don't notice the problem BEHIND you.
 The Cub bear soars out of the Bear House at lightning fast speeds, biting into the back of your neck. This catches 
 you off guard, and in your brief moment of hesitation, Mama bear lunges in with a lethal swipe to the chest.
                 ''')
+                input("press [ENTER] to continue")
                 Navigator = "FCB"
                 break
             if gameChoice.lower() in ListC:
@@ -1044,9 +1045,11 @@ Well, if you can punt a bear to the moon then who's to say you CAN'T shoot laser
                 ''')
                 input("press [ENTER] to continue")
                 print('''
-
+You focus as hard as you can on the mental image of Mama Bear exploding. You've seen the movies, you know that to fire
+lasers from your eyes you just have to will it to happen.
                 ''')
-                Navigator = "1"
+                input("press [ENTER] to continue")
+                Navigator = "FLE"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -1059,4 +1062,50 @@ Well, if you can punt a bear to the moon then who's to say you CAN'T shoot laser
     elif str(Navigator) == "FB":
         deadNum = random.randint(0, 2)
         print(deadBear[deadNum])
+        gameOn = 1
+
+    elif str(Navigator) == "FLE":
+        print('''
+        You focus your intense bear-flinging force on the pupils off your eyes, gathering as much power as you possibly
+        can. The air in front of you crackles and hisses, heating up to insane temperatures. 
+        
+        But, why do your eyes hurt? Why does your brain hurt?
+        
+        Then it hits you: Eyes ABSORB light, they don't eject light.
+        
+        The power builds up, and your head explodes.
+        ''')
+        gameOn = 1
+
+    elif str(Navigator) == "FCB":
+        print(''' 
+        You slump to your knees, clutching your oozing stomach. Mama Bear lifts your chin so that you 
+        stare directly into her eyes.
+        
+        "You're a tough kid, I'll give ya that," Mama bear remarks in a grizzly tone, "But you're an 
+        arrogant fool if you think you can win just because you're the protagonist."
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        Mama Bear drops your chin and begins to pace around you at a leisurely pace.
+        
+        "This game of life may be full of nonsense, but there is some truth and knowledge hidden behind the absurd.
+        To win a fight, you must choose the correct options at the correct times, the same is true in any fight. To
+        get what you want, you must EARN it, even if you fail along the way. One cannot simply walk into success, you
+        must acknowledge the obstacles and opponents that block your path.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        "You, Kid, have failed. You failed to recognize your own limits, you failed to recognize my skill, and you 
+        failed to properly recognize the danger that you were in."
+        
+        "Next time, take a while to think through your situation, and consider ALL the options available to you.
+        Got it?"
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        With that, the world around you spirals out into a misty, abyssal void. The last wisps of breath leave your
+        lungs, and you let go of your mortal body.
+        
+        You have died.''')
         gameOn = 1
