@@ -1125,7 +1125,7 @@ Well, if you can punt a bear to the moon then who's to say you CAN'T shoot laser
                 ''')
                 input("press [ENTER] to continue")
                 print('''
-You focus as hard as you can on the mental image of Mama Bear exploding. You've seen the movies, you know that to fire
+You concentrate as hard as you can on the mental image of Mama Bear melting. You've seen the movies, you know that to fire
 lasers from your eyes you just have to will it to happen.
                 ''')
                 input("press [ENTER] to continue")
@@ -1158,7 +1158,23 @@ lasers from your eyes you just have to will it to happen.
         
         Then it hits you: Eyes ABSORB light, they don't eject light.
         
-        The power builds up, and your head explodes.
+        The power builds up, you can FEEL your eyes begin to boil, but you can't stop the flow of energy. Red lightning 
+        arcs from the air into your eyes, crackling aggressively. The heat becomes too much to bear, and you let go...
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        
+        Like a cliche slow motion movie sequence, complete with soft opera music, your head combusts into a brilliant 
+        multicoloured inferno. Searing light of all colours spreads from the beacon that is your head, scorching everything in
+        a 5 mile radius. The mountain beneath your feet is flash-melted, forming a bubbling expanse of magma.
+        Technicolour waves of plasma pulse outwards, melting Mama bear and the rest of the valley around you. The force 
+        of the blast parts the clouds and, for a brief moment, the heat of your explosion can be felt from space.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        Well, technically you DID cause Mama bear to melt.
+        
+        You have Died.
         ''')
         gameOn = 1
 
