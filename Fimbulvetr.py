@@ -50,28 +50,16 @@ slowly lose consciousness.
 deadDog = list(['''The dogs pounce on you and tear apart your flesh with their jaws. Your last sight is seeing one of the dogs
 chomping down on your face...
 
-You have died.''' , '''The dogs surround you. There's no chance you'll survive despite your (non-existent) survival
+You have died''' , '''The dogs surround you. There's no chance you'll survive despite your (non-existent) survival
 skills. They eventually overpower you when their owner walks over to you with his gun loaded.
 
 *BANG!*
 
-You have died.''' , '''You decide to ride away from the dogs. The motorcycle is fast, and you lose control quickly, sending
+You have died''' , '''You decide to ride away from the dogs. The motorcycle is fast, and you lose control quickly, sending
 you directly into a powerpole. The voltage running through the pole is redirected into the fuel tank of your motorcycle,
 and the resulting fireball incinerates your already mutilated body.
 
-You have died.'''])
-
-deadFlame = list(['''You are instantly burned to a crisp and melt away into dust.
-
-You have died.''' , '''You inhale the flames and have your organs fried like potato chips.
-
-You have died.''' , '''You let the flames consume you as you ponder your life, your childhood, everything in your past,
-when you let out your last breath with a sigh of relief, knowing that you died in a really stupid way.
-
-You have died.''' , '''The flames begin to turn your skin black, slowly melting your body down. Then you somehow melt like
-an ice cream. That was weird.
-
-You have died.'''])
+You have died'''])
 
 # Function Definitions
 
@@ -703,50 +691,25 @@ You drive straight over the gaps in the road at stupidly high speeds when the ro
 
 It just ends.
 
-You hit a solid barrier at speed and get sent out the front window. You dolphin dive a few km, passing a nearby biplane
-at a great altitude
+You hit a solid barrier at speed and get sent out the front window. You dolphin dive a few km, passing a nearby plane at
+a great altitude
         ''')
-        input("press [ENTER] to continue")
-        print('''
-As you pass the biplane, you manage to see the pilot, smoking a pipe, as you fly through the atmosphere.
-
-"Oh Hi" you say
-
-"Hello there," the pilot responds, "It's dangerous to go alone. Take this."
-
-He hands you a gun for some reason. Could be useful.
-        ''')
-        Items.append("Gun")
-        input("press [ENTER] to continue")
-        print('''
-You get a good view of the surrounding area. Do you...
-
-    [A] Land in a forest
-    
-    [B] Steal the plane
-    
-    [C] Wing it
-        ''')
+        #ADD A SEGMENT WHERE YOU GET A GUN, THEN LEAD BACK TO 1AAA
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
                 print('''
-You land in the forest with a slight squeak...
+            
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1AAA"
+                Navigator = "1"
                 break
             if gameChoice.lower() in ListB:
                 print('''
-You decide to point your newly gain gun at the pilot...
-
-He pulls out a flamethrower.
+            
                 ''')
                 input("press [ENTER] to continue")
-                print('''
-He fires the flamethrower directly at you, lightly toasting every inch of your body in the process.
-                ''')
-                Navigator = "FF"
+                Navigator = "1"
                 break
             if gameChoice.lower() in ListC:
                 print('''
@@ -1181,9 +1144,4 @@ Well, if you can punt a bear to the moon then who's to say you CAN'T shoot laser
     elif str(Navigator) == "FD":
         deadNum = random.randint(0, 2)
         print(deadDog[deadNum])
-        gameOn = 1
-
-    elif str(Navigator) == "FF":
-        deadNum = random.randint(0, 3)
-        print(deadFlame[deadNum])
         gameOn = 1
