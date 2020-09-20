@@ -564,7 +564,7 @@ There are no signs telling you where your options lie
         print('''
 To your left lies a mostly overgrown, partly dirt road that looks like it could lead to something.
 There is an almost untouched street to your right, with trimmed bushes, and beautiful houses.
-The road to your front is half gone.
+The road to your front is.... well.... kinda half gone.
 
 Not like covered or anything.
 
@@ -613,13 +613,13 @@ Left... Ok then, it's your funeral.
     elif str(Navigator) == "1ABA":
         print('''
 You drive along the track to what looks like an abandoned scrapyard. There are old cars, trucks and even a couple of
-classic motorcycles, to your disappointment.
+classic motorcycles to your disappointment.
                 ''')
         input("press [ENTER] to continue")
         print('''
 Your jeep is looking a bit.. battered, if I must say.
 
-And in complete honesty, I'm surprised it's still running...
+And in complete honesty, I'm surprised its still running...
 
         What's the plan?
         
@@ -1116,7 +1116,6 @@ Unfortunately, you don't notice the problem BEHIND you.
 The Cub bear soars out of the Bear House at lightning fast speeds, biting into the back of your neck. This catches 
 you off guard, and in your brief moment of hesitation, Mama bear lunges in with a lethal swipe to the chest.
                 ''')
-                input("press [ENTER] to continue")
                 Navigator = "FCB"
                 break
             if gameChoice.lower() in ListC:
