@@ -50,17 +50,24 @@ slowly lose consciousness.
 deadDog = list(['''The dogs pounce on you and tear apart your flesh with their jaws. Your last sight is seeing one of the dogs
 chomping down on your face...
 
-You have died''' , '''The dogs surround you. There's no chance you'll survive despite your (non-existent) survival
+You have died.''' , '''The dogs surround you. There's no chance you'll survive despite your (non-existent) survival
 skills. They eventually overpower you when their owner walks over to you with his gun loaded.
 
 *BANG!*
 
-You have died''' , '''You decide to ride away from the dogs. The motorcycle is fast, and you lose control quickly, sending
+You have died.''' , '''You decide to ride away from the dogs. The motorcycle is fast, and you lose control quickly, sending
 you directly into a powerpole. The voltage running through the pole is redirected into the fuel tank of your motorcycle,
 and the resulting fireball incinerates your already mutilated body.
 
 You have died'''])
 
+deadFlame = list(['''You are instantly burned to a crisp and melt away into dust.	
+You have died.''' , '''You inhale the flames and have your organs fried like potato chips.	
+You have died.''' , '''You let the flames consume you as you ponder your life, your childhood, everything in your past,	
+when you let out your last breath with a sigh of relief, knowing that you died in a really stupid way.	
+You have died.''' , '''The flames begin to turn your skin black, slowly melting your body down. Then you somehow melt like	
+an ice cream. That was weird.	
+You have died.'''])
 # Function Definitions
 
 # repLine - This function takes two parameters, the number of the desired line and the desired text.
@@ -564,7 +571,7 @@ There are no signs telling you where your options lie
         print('''
 To your left lies a mostly overgrown, partly dirt road that looks like it could lead to something.
 There is an almost untouched street to your right, with trimmed bushes, and beautiful houses.
-The road to your front is.... well.... kinda half gone.
+The road to your front is half gone.
 
 Not like covered or anything.
 
@@ -619,7 +626,7 @@ classic motorcycles to your disappointment.
         print('''
 Your jeep is looking a bit.. battered, if I must say.
 
-And in complete honesty, I'm surprised its still running...
+And in complete honesty, I'm surprised it's still running...
 
         What's the plan?
         
@@ -694,22 +701,44 @@ It just ends.
 You hit a solid barrier at speed and get sent out the front window. You dolphin dive a few km, passing a nearby plane at
 a great altitude
         ''')
+        input("press [ENTER] to continue")
+        print('''	
+As you pass the biplane, you manage to see the pilot, smoking a pipe, as you fly through the atmosphere.	
+"Oh Hi" you say	
+"Hello there," the pilot responds, "It's dangerous to go alone. Take this."	
+He hands you a gun for some reason. Could be useful.	
+        ''')
+        Items.append("Gun")
+        input("press [ENTER] to continue")
+        print('''	
+You get a good view of the surrounding area. Do you...	
+    [A] Land in a forest	
+    	
+    [B] Steal the plane	
+    	
+    [C] Wing it
+    ''')
         #ADD A SEGMENT WHERE YOU GET A GUN, THEN LEAD BACK TO 1AAA
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
                 print('''
-            
+You land in the forest with a slight squeak...
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1"
+                Navigator = "1AAA"
                 break
             if gameChoice.lower() in ListB:
                 print('''
-            
+You decide to point your newly gain gun at the pilot...	 
+           
+He pulls out a flamethrower.           
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1"
+                print('''
+He fires the flamethrower directly at you, lightly toasting every inch of your body in the process.	
+                ''')
+                Navigator = "FF"
                 break
             if gameChoice.lower() in ListC:
                 print('''
@@ -1208,4 +1237,9 @@ lasers from your eyes you just have to will it to happen.
         lungs, and you let go of your mortal body.
         
         You have died.''')
+        gameOn = 1
+
+    elif str(Navigator) == "FF":
+        deadNum = random.randint(0, 3)
+        print(deadFlame[deadNum])
         gameOn = 1
