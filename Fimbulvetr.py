@@ -1165,6 +1165,82 @@ lasers from your eyes you just have to will it to happen.
             else:
                 print("Please select an actual option.")
 
+    elif str(Navigator) == "1AAABAAA":
+        print('''
+        
+Cub Bear flies out of the house at lightning fast speeds, aiming to bite into your neck. You spin around and, like 
+swatting a fly, slap Cub Bear back into the house, his impact causing an explosion that rocks the valley. A furious 
+growl from the left startles you, and you bearly manage to dodge Mama Bear's murderous swipe.
+
+"BEARNABY!" Mama Bear cries, then turns to you, "YOU HURT MY BABY!!"
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+Mama Bear recklessly swings at you, fighting with every cell in her body. Her attacks are sloppy and easy to dodge, 
+making this an easy fight.
+She lunges at you. You dodge to the right, and with a quick strike to the back of the neck, Mama Bear goes down, 
+unconscious.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+You're about to walk away, when a bright light appears in the sky. A bright, growing, bear-shaped light. You're eyes
+widen, and you brace for impact right as a flaming meteor of a bear crashes into the ground at your feet, sending you 
+flying.
+
+Skidding to a halt a few meters away, you leap to your feet and quickly assess the new crater in front of you. Smoke 
+fills the valley, obscuring most of the destruction from your view.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+With a blinding flash and a burst of wind, the smoke clears. A glowing, godly Bear the size of a small car floats up
+from the crater before you. You recognize this bear as the one you punched into space. The bear that Mama Bear referred 
+to as: 'Robearto'
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        Robearto crosses his arms, staring at you with an unreadable expression.
+        
+        "SO," Robearto states in a booming voice that echoes throughout the valley, you get the impression that his 
+        voice alone could shatter mountains.
+        
+        "I take it YOU'RE the one who defeated MY Bear-atrice?"
+        
+        "And what if I did?" you respond, failing to hide the shaking in your voice as you face this behemoth.
+        
+        Robearto looms closer, floating down to eye level, inches from your face.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        Robearto backs up from you, sighs, and bows down before you.
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+            
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
 
 
     elif str(Navigator) == "FB":
@@ -1200,7 +1276,7 @@ lasers from your eyes you just have to will it to happen.
         ''')
         input("press [ENTER] to continue")
         print('''
-        Well, technically you DID cause Mama bear to melt.
+        Well, technically you DID cause Mama Bear to melt.
         
         You have Died.
         ''')
@@ -1211,7 +1287,7 @@ lasers from your eyes you just have to will it to happen.
         You slump to your knees, clutching your oozing stomach. Mama Bear lifts your chin so that you 
         stare directly into her eyes.
         
-        "You're a tough kid, I'll give ya that," Mama bear remarks in a grizzly tone, "But you're an 
+        "You're a tough kid, I'll give ya that," Mama Bear remarks in a grizzly tone, "But you're an 
         arrogant fool if you think you can win just because you're the protagonist."
         ''')
         input("press [ENTER] to continue")
