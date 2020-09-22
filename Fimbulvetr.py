@@ -61,12 +61,26 @@ and the resulting fireball incinerates your already mutilated body.
 
 You have died'''])
 
-deadFlame = list(['''You are instantly burned to a crisp and melt away into dust.	
-You have died.''' , '''You inhale the flames and have your organs fried like potato chips.	
+deadFlame = list(['''You are instantly burned to a crisp and melt away into dust.
+	
+You have died.''' , '''You inhale the flames and have your organs fried like potato chips.
+	
 You have died.''' , '''You let the flames consume you as you ponder your life, your childhood, everything in your past,	
-when you let out your last breath with a sigh of relief, knowing that you died in a really stupid way.	
+when you let out your last breath with a sigh of relief, knowing that you died in a really stupid way.
+	
 You have died.''' , '''The flames begin to turn your skin black, slowly melting your body down. Then you somehow melt like	
-an ice cream. That was weird.	
+an ice cream. That was weird.
+	
+You have died.'''])
+
+deadDrown = list(['''Your inability to swim becomes your downfall as you slowly stumble deeper into the water.
+
+You have died.''' , '''The pure joy of being in water for the first time in your life unfortunately ends it, as your
+pure excitement creates so much heat it fries your brain before you can think twice.
+
+You have died.''' , '''The toxins in the water from years of pollution and ashfall comsume you as you splash around without
+knowledge that your body is quickly decaying.
+
 You have died.'''])
 # Function Definitions
 
@@ -821,13 +835,15 @@ Do you...
             if gameChoice.lower() in ListA:
                 print('''
 Well, this will be exciting.
+
+You run into the water and 'swim' further into the water.
                 ''')
                 input("press [ENTER] to continue")
                 Navigator = "FDW"
                 break
             if gameChoice.lower() in ListB:
                 print('''
-Yum! Banana, mayo and olive sandwiches. My favourite!
+Yum! Banana, mayo and olive sandwiches. My favourite! (Not really)
                 ''')
                 input("press [ENTER] to continue")
                 Navigator = "1ABABAB"
@@ -835,12 +851,47 @@ Yum! Banana, mayo and olive sandwiches. My favourite!
             if gameChoice.lower() in ListC:
                 print('''
 The ocean has decided to become a giant spa pool.
+
+You decide that leaping into the middle of the ocean is a smart idea, so you do just that.
+
+You land directly in the middle of the ocean.
                 ''')
                 input("press [ENTER] to continue")
                 Navigator = "FDW"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    if str(Navigator) == "1ABABAB":
+        print('''
+You chop down on your war-crime of a sandwich with the most disgusted smile I've seen since your parents had you.
+
+Do you eat more though?
+
+    [A] Yes
+    
+    [B] No. Get rid of it.
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+So you want the rest?
+
+What the hell is wrong with you?
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FFS"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+Good choice. Seriously, good choice.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FHE"
                 break
             else:
                 print("Please select an actual option.")
@@ -1382,5 +1433,37 @@ to as: 'Robearto'
 You become so amazed at your achievement that you forget you are beside a plane, and fly directly into its propellers.
 
 You have died.
+        ''')
+        gameOn = 1
+
+    elif str(Navigator) == "FDW":
+        deadNum = random.randint(0,2)
+        print(deadDrown[deadNum])
+        gameOn = 1
+
+    elif str(Navigator) == "FFS":
+        print('''
+I'm actually so grossed out by that. I need it to stop.
+
+You see a giant fist form above you, just floating in midair.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+The fist slams down on your measly body and turns you into a puddle of mush. There goes the sandwich issue, and you in
+the proccess.
+
+You have died.
+        ''')
+    elif str(Navigator) == "FHE":
+        print('''
+You put your disgrace of a sandwich down on the sand, and strap that C-4 stuff you found earlier to it. This will look
+awesome.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+You drive away from the beach with a smile on your face, blasting music, with a huge explosion behind you to eradicate
+your sandwich as you disappear into the sunset.
+
+Congratulations! You have completed Fimbulvetr with the 'Hollywood Explosion' ending!
         ''')
         gameOn = 1
