@@ -1013,13 +1013,10 @@ Honestly I have no clue why you didn't just open the gate, after all it was neve
                 break
             if gameChoice.lower() in ListB:
                 print('''
+                
+The tree is pretty high up, although you could probably make it. You leap onto the tree and climb up to a good 
+overhanging branch.
 
-You know what they say, the brain's like a muscle. Considering your impossible muscles, you must have a pretty big brain.
-
-                ''')
-                input("press [ENTER] to continue")
-                print('''
-I'm just disappointed that THIS was the best plan you could come up with.
                 ''')
                 input("press [ENTER] to continue")
                 Navigator = "1AAABB"
@@ -1268,36 +1265,55 @@ to as: 'Robearto'
         ''')
         input("press [ENTER] to continue")
         print('''
-        Robearto backs up from you, sighs, and bows down before you.
+        Robearto backs up from you, sighs, and bows down. 
+        
+        "You have bested both I and Bearatrice, the King and Queen of the Bears, in hand to hand combat. By ancient 
+        bear law, you have rightfully earned the crown. I bow to you, O mighty king of bears."
+        
+        As Robearto utters these words, the remains of the forest around you shift and russle. Bears of every shape and
+        species emerge from the bushes, surrounding you. They gather in close, hundreds upon hundreds of bears, and bow
+        to you.
+        
         ''')
-        while True:
-            gameChoice = str(input(""))
-            if gameChoice.lower() in ListA:
-                print('''
-            
-                ''')
-                input("press [ENTER] to continue")
-                Navigator = "1"
-                break
-            if gameChoice.lower() in ListB:
-                print('''
-            
-                ''')
-                input("press [ENTER] to continue")
-                Navigator = "1"
-                break
-            if gameChoice.lower() in ListC:
-                print('''
-            
-                ''')
-                input("press [ENTER] to continue")
-                Navigator = "1"
-                break
-            if gameChoice.lower() in ListMenu:
-                Menu(True)
-                break
-            else:
-                print("Please select an actual option.")
+        input("press [ENTER] to continue")
+        print('''
+        Over the next few months, under your leadership the Bear society really flourishes. Roads and infrastructure are
+        laid down all throughout the valley, forming a sprawling network of transport that effectively triples the Bear 
+        economy. With your guidance, a hospital is constructed, providing free health care to all of your citizens.
+        The wrecked Bear house is converted into a school for young cubs, teaching them all the knowledge they'll need 
+        to become functioning membears of society. 
+        
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        Over the next few years, houses and suburbs are constructed, as well
+        as an impressive automotive industry. Cars designed for humans AND bears are produced to meet the growing demand
+        for human-friendly vehicles and buildings, as more and more of the small, struggling settlements across the 
+        nation flock to your growing city. 
+        
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        To combat the increased intensity of bandit raids, especially from your old gang, the Vinter Kin, A combined 
+        Bear-Human military is founded, and inventive battle tactics are devised. Within a year of this new military's 
+        founding, a war breaks out between your city and the gangs. Many lives are lost, many Bears are flung, but after
+        a week of fighting your military manages to storm the gang leaders and you secure a decisive victory. 
+        
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        With the war won, You continue to expand your rule, branching off into new cities and towns. Finally, after 
+        ten whole years, your small kingdom has blossomed into a prosperous nation of Bears and Humans that controls 
+        all of north america. By now, the AshFall has dissipated and the sky is clear. 
+        
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+        You look out of your palace, which was once the White House, and watch as the first ambassador 
+        from europe arrives at your doorstep to discuss trades.
+        
+        Congratulations, you have finished Fimbulvetr as King of the Bears.''')
+        gameOn = 1
 
 
     elif str(Navigator) == "FB":
