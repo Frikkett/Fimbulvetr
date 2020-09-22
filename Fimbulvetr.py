@@ -730,7 +730,7 @@ You land in the forest with a slight squeak...
                 break
             if gameChoice.lower() in ListB:
                 print('''
-You decide to point your newly gain gun at the pilot...	 
+You decide to point your newly gained gun at the pilot...	 
            
 He pulls out a flamethrower.           
                 ''')
@@ -742,10 +742,10 @@ He fires the flamethrower directly at you, lightly toasting every inch of your b
                 break
             if gameChoice.lower() in ListC:
                 print('''
-            
+You flap your arms faster than a humming bird and begin to accelerate past the plane.
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1"
+                Navigator = "FP"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -758,29 +758,86 @@ He fires the flamethrower directly at you, lightly toasting every inch of your b
         print('''
 You find various pieces of scrap metal to repair your jeep, and over the course of a couple of minutes you make your
 once battered unit of a car into a pristine luxury off road vehicle. How did that take a few minutes exactly?
+
+That doesn't matter though, because there is an ashfall coming.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+Do you...
+
+    [A] Drive down the trail to avoid the ashfall
+    
+    [B] Trust in your newly constructed car
+    
+    [C] Have a picnic
         ''')
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
                 print('''
-            
+That's probably a smart idea, but I thought you didn't care about this sorta stuff...
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1"
+                Navigator = "1ABABA"
                 break
             if gameChoice.lower() in ListB:
                 print('''
-            
+Yes, because your homemade luxury jeep definitely would pass the road fitness test.
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1"
+                Navigator = "1ABABB"
                 break
             if gameChoice.lower() in ListC:
                 print('''
-            
+Oh what a wonderful idea.
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1"
+                Navigator = "1ABABC"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1ABABA":
+        print('''
+You drive away from the ashfall without issues in the most beautiful weather you've ever seen, which is cloudy.
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+You drive for hours on end until you reach what looks like a beach. Honestly, how'd you find one of those?
+
+Do you...
+
+    [A] Have a swim
+    
+    [B] Sit on the beach eating a sandwich
+    
+    [C] Also have a swim, but the water is warmer than normal
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+Well, this will be exciting.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FDW"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+Yum! Banana, mayo and olive sandwiches. My favourite!
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "1ABABAB"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+The ocean has decided to become a giant spa pool.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FDW"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -1318,4 +1375,12 @@ to as: 'Robearto'
     elif str(Navigator) == "FF":
         deadNum = random.randint(0, 3)
         print(deadFlame[deadNum])
+        gameOn = 1
+
+    elif str(Navigator) == "FP":
+        print('''
+You become so amazed at your achievement that you forget you are beside a plane, and fly directly into its propellers.
+
+You have died.
+        ''')
         gameOn = 1
