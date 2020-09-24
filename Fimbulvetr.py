@@ -1066,11 +1066,17 @@ Honestly I have no clue why you didn't just open the gate, after all it was neve
                 print('''
                 
 The tree is pretty high up, although you could probably make it. You leap onto the tree and climb up to a good 
-overhanging branch.
+overhanging branch. From this branch, you can see over the house into the valley. Taking a moment to gaze into the sky, 
+both suns bright and burning, you leap off the branch.
 
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1AAABB"
+                print('''
+                
+Soaring through the air, you realise there aren't two suns. Twisting around mid leap, you see a flaming bear plumetting 
+straight towards you.
+                ''')
+                Navigator = "FMB"
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -1288,7 +1294,7 @@ unconscious.
         ''')
         input("press [ENTER] to continue")
         print('''
-You're about to walk away, when a bright light appears in the sky. A bright, growing, bear-shaped light. You're eyes
+You're about to walk away, when a bright light appears in the sky. A bright, growing, bear-shaped light. Your eyes
 widen, and you brace for impact right as a flaming meteor of a bear crashes into the ground at your feet, sending you 
 flying.
 
@@ -1300,6 +1306,7 @@ fills the valley, obscuring most of the destruction from your view.
 With a blinding flash and a burst of wind, the smoke clears. A glowing, godly Bear the size of a small car floats up
 from the crater before you. You recognize this bear as the one you punched into space. The bear that Mama Bear referred 
 to as: 'Robearto'
+
         ''')
         input("press [ENTER] to continue")
         print('''
@@ -1337,10 +1344,9 @@ to as: 'Robearto'
         ''')
         input("press [ENTER] to continue")
         print('''
-        Over the next few years, houses and suburbs are constructed, as well
-        as an impressive automotive industry. Cars designed for humans AND bears are produced to meet the growing demand
-        for human-friendly vehicles and buildings, as more and more of the small, struggling settlements across the 
-        nation flock to your growing city. 
+        Over the next few years, houses and suburbs are constructed, as well as an impressive automotive industry. 
+        Cars designed for humans AND bears are produced to meet the growing demand for human-friendly vehicles and 
+        buildings, as more and more of the small, struggling settlements across the nation flock to your growing city. 
         
         ''')
         input("press [ENTER] to continue")
@@ -1481,5 +1487,11 @@ You drive away from the beach with a smile on your face, blasting music, with a 
 your sandwich as you disappear into the sunset.
 
 Congratulations! You have completed Fimbulvetr with the 'Hollywood Explosion' ending!
+        ''')
+        gameOn = 1
+
+    elif str(Navigator) == "FMB":
+        print('''
+        The bear crashes head 
         ''')
         gameOn = 1
