@@ -799,7 +799,7 @@ That's probably a smart idea, but I thought you didn't care about this sorta stu
 Yes, because your homemade luxury jeep definitely would pass the road fitness test.
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1ABABB"
+                Navigator = "FRA"
                 break
             if gameChoice.lower() in ListC:
                 print('''
@@ -865,7 +865,66 @@ You land directly in the middle of the ocean.
             else:
                 print("Please select an actual option.")
 
-    if str(Navigator) == "1ABABAB":
+    elif str(Navigator) == "FRA":
+        print('''
+Your luxury jeep was made for luxury, not practicality.
+
+You sit inside your jeep when the ashfall pours down on the roof, eventualy creating too much weight on your car,
+sending metal and cloth and electrical wiring down onto you, crushing your skeleton and ending your measly life quickly.
+
+You have died.
+        ''')
+    elif str(Navigator) == "1ABABC":
+        print('''
+Your picnic consists of many different foods and drinks. Its a shame you don't have anyone to share it with...
+        ''')
+        input("press [ENTER] to continue")
+        print('''
+To your surprise, a glowing yellow van full of crackheads rolls up to your picnic and sit down with you. They ask if
+they can join you on your picnic. There's plenty to go around.
+
+Do you...
+
+    [A] Say yes to these pipesmokers
+    
+    [B] Eat all the food yourself
+    
+    [C] Activate self defence mode
+        ''')
+        while True:
+            gameChoice = str(input(""))
+            if gameChoice.lower() in ListA:
+                print('''
+Ok then, looks like you've somehow got some friends.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FHP"
+                break
+            if gameChoice.lower() in ListB:
+                print('''
+Wow, you greedy glutton. I've never seen someone be so selfish.
+
+Actually I have, but that was also you.
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FFF"
+                break
+            if gameChoice.lower() in ListC:
+                print('''
+Activating self defence mode...
+
+Why do you have a self defence mode?
+                ''')
+                input("press [ENTER] to continue")
+                Navigator = "FSDM"
+                break
+            if gameChoice.lower() in ListMenu:
+                Menu(True)
+                break
+            else:
+                print("Please select an actual option.")
+
+    elif str(Navigator) == "1ABABAB":
         print('''
 You chop down on your war-crime of a sandwich with the most disgusted smile I've seen since your parents had you.
 
