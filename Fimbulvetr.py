@@ -68,7 +68,7 @@ You have died.''' , '''You inhale the flames and have your organs fried like pot
 You have died.''' , '''You let the flames consume you as you ponder your life, your childhood, everything in your past,	
 when you let out your last breath with a sigh of relief, knowing that you died in a really stupid way.
 	
-You have died.''' , '''The flames begin to turn your skin black, slowly melting your body down. Then you somehow melt like	
+You have died.''' , '''The flames begin to burn, slowly melting your body down. Then you somehow melt like	
 an ice cream. That was weird.
 	
 You have died.'''])
@@ -76,7 +76,7 @@ You have died.'''])
 deadDrown = list(['''Your inability to swim becomes your downfall as you slowly stumble deeper into the water.
 
 You have died.''' , '''The pure joy of being in water for the first time in your life unfortunately ends it, as your
-pure excitement creates so much heat it fries your brain before you can think twice.
+excitement creates so much heat it fries your brain before you can think twice.
 
 You have died.''' , '''The toxins in the water from years of pollution and ashfall comsume you as you splash around without
 knowledge that your body is quickly decaying.
@@ -114,7 +114,11 @@ def Menu(inGame):
     global yes
     global no
     global lexit
+    # This "While" loop allows me to end the "Menu" function when the independent variable "menuUp" is altered.
     while menuUp == 0:
+        # the "r" before the three quote marks allows me to display the Text art below. Usually, the back-slashes-"\"-would signal the program to
+        # print some kind of whitespace in their place (\t = tab, \n = newline, etc.). The "r", however, prevents this by telling the program to ignore
+        # the backslash formatting and instead just print the text as it is.
         print(r'''
         ()=============================================================================================================()
         ||   ____________________________________________________________________________________________              ||
@@ -132,6 +136,7 @@ def Menu(inGame):
         ||            \\\___________________________________________________________________________________________\  ||
         ||             ()\___________________________________________________________________________________________\ ||
         ()=============================================================================================================()''')
+        # presents the user with options
         print(''' 
         Please select ONE of the following options, or type "exit" if you want to exit the game.
         
@@ -149,6 +154,7 @@ def Menu(inGame):
         |__'--_| THIS IS IRREVERSIBLE. TO SELECT THIS OPTION, TYPE "C" AND PRESS [Enter]
         ''')
         if inGame == True:
+            # Gives the user an additional option if the user is currently playing the game.
             print('''
          ______
         | +==. | Exit menu and return to game. To select this option, type "D" and 
@@ -163,6 +169,7 @@ def Menu(inGame):
             deadLoop = 0
             menuChoice = str(input('''
 ==='''))
+            # This section of the function deals with loading pre-existing save files.
             if menuChoice.lower() in ListA:
                 # Opens the directory 'Fimbulvetr Save File'
                 optionsCheck = os.listdir('Fimbulvetr Save File')
@@ -196,6 +203,7 @@ Loading {}.'''.format(loadName))
                                     loadLoop = 1
                                     break
                                 elif loadSure.lower() in no:
+                                    # cancels the load if the user is unsure.
                                     print("Load Cancelled")
                                     loadLoop = 1
                                     break
@@ -215,24 +223,32 @@ Loading {}.'''.format(loadTxt))
                                     loadLoop = 1
                                     break
                                 elif loadSure.lower() in no:
+                                    # cancels the load if the user is unsure.
                                     print("Load Cancelled")
                                     loadLoop = 1
                                     break
                         elif loadName.lower() in cancel:
+                            # cancels the load if the user tells the program to.
                             print("Load Cancelled")
                             break
                         else:
+                            # returns a message if the user enters an invalid input.
                             print("Please type an actual option from the list.")
 
+            # This section of the function deals with creating new save files.
             elif menuChoice.lower() in ListB:
+                # This "While" loop allows me to end the "New Game" section of the function when the independent variable "makeTry" is altered.
+                # It also allows the user to continue trying to make new game files if they happen to enter an invalid input.
                 makeTry = True
                 while makeTry == True:
                     # Asks the user for a name for their save file
                     print("What would you like to call your game? (type 'Cancel' to exit)")
                     gameName = str(input())
+                    # Sets the variable "gameDef" to the correct format for opening files.
                     gameDef = "Fimbulvetr Save File/" + gameName + ".txt"
                     try:
                         if gameName in cancel:
+                            # cancels the "New Game" section of the function if the user enters an input that is in the "cancel" list.
                             print("Cancelled.")
                             makeTry = False
                         else:
@@ -245,6 +261,7 @@ Loading {}.'''.format(loadTxt))
                             makeNew.write('bread\n')
                             makeNew.write('wallet\n')
                             makeNew.close()
+                            # Tells the user the name of their game and it's location in the computer's files.
                             print("Your game is called {}.".format(gameName))
                             print("Your game is located at {}.".format(gameDef))
                             print('''
@@ -254,8 +271,10 @@ Please Enjoy the game.''')
                             menuStay = 1
                             makeTry = False
                     except FileExistsError:
+                        # detects when the entered name is already in use and informs the user.
                         print("This name is already in use. Please choose a different name.")
 
+            # This section of the function deals with Deleting pre-existing save files.
             elif menuChoice.lower() in ListC:
                 # Opens the directory 'Fimbulvetr Save File'
                 optionsCheck = os.listdir('Fimbulvetr Save File')
@@ -297,6 +316,7 @@ Ex-ter-min-ate!!''')
                                     deadLoop = 1
                                     break
                                 elif deadSure.lower() in no:
+                                    # Cancels deletion if the user is unsure
                                     print("EXTERMINATION Cancelled")
                                     deadLoop = 1
                                     break
@@ -324,10 +344,12 @@ Exterminate!''')
                                     deadLoop = 1
                                     break
                                 elif deadSure.lower() in no:
+                                    # Cancels deletion if the user is unsure
                                     print("EXTERMINATION Cancelled")
                                     deadLoop = 1
                                     break
                         elif deadName.lower() in cancel:
+                            # cancels the "Delete" section of the function if the user enters an input that is in the "cancel" list.
                             print("EXTERMINATION Cancelled")
                             break
                         else:
