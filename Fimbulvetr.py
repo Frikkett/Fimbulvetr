@@ -355,10 +355,13 @@ Exterminate!''')
                         else:
                             print("Please type an actual option from the list.")
             elif menuChoice.lower() in ListD:
-                print("Returning to game...")
-                # Returns to game
-                menuUp = 1
-                menuStay = 1
+                if inGame == True:
+                    print("Returning to game...")
+                    # Returns to game
+                    menuUp = 1
+                    menuStay = 1
+                else:
+                    print("Type an actual option please.")
             elif menuChoice.lower() in lexit:
                 print("Exiting Program.")
                 # Exits the program
