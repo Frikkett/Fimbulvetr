@@ -433,14 +433,16 @@ while gameOn == 0:
                 print("Please select an actual option.")
 
     # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
-    # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR DEATH.
+    # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR ENDINGS.
 
     if str(Navigator) == "XY":
         deadNum = random.randint(0, 5)
         print(dead___(deadNum))
         gameOn = 1
 
-    # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR DEATH.
+    # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR ENDINGS.
+
+    # From here, the majority of the program is repetition of the same altered segment.
 
     if str(Navigator) == "1":
         print('''
@@ -521,13 +523,13 @@ Just don't expect me to narrate it!
 
 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1B"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListC:
                 print('''
             
                 ''')
-                Navigator = "1"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -588,7 +590,7 @@ to? Just figured I'd mention that.
 
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1AC"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -645,7 +647,7 @@ Left... Ok then, it's your funeral.
             
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1ABC"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -707,14 +709,14 @@ to eat you. I hope you feel stupid.
 
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1ABAB"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListC:
                 print('''
 
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1ABAC"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -754,7 +756,6 @@ You get a good view of the surrounding area. Do you...
     	
     [C] Wing it
     ''')
-        #ADD A SEGMENT WHERE YOU GET A GUN, THEN LEAD BACK TO 1AAA
         while True:
             gameChoice = str(input(""))
             if gameChoice.lower() in ListA:
@@ -1023,7 +1024,7 @@ you'd be at a major disadvantage if you attempted to fight a bear in such a dens
  
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1AAB"
+                Navigator = "1AB"
                 break
             if gameChoice.lower() in ListC:
                 print('''
@@ -1034,7 +1035,7 @@ grind of metal on stone reverberates throughout the forest, and you realise you'
 
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1AAC"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -1099,7 +1100,7 @@ Looks like we got ourselves a good 'Ol canadian stand off.
 
                 ''')
                 input("press [ENTER] to continue")
-                Navigator = "1AAAC"
+                print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                 break
             if gameChoice.lower() in ListMenu:
                 Menu(True)
@@ -1154,7 +1155,7 @@ both suns bright and burning, you leap off the branch.
                 input("press [ENTER] to continue")
                 print('''
                 
-Soaring through the air, you realise there aren't two suns. Twisting around mid leap, you see a flaming bear plumetting 
+Soaring through the air, you realise there aren't two suns. Twisting around mid leap, you see a flaming bear plummeting 
 straight towards you.
                 ''')
                 Navigator = "FMB"
@@ -1573,6 +1574,9 @@ Congratulations! You have completed Fimbulvetr with the 'Hollywood Explosion' en
 
     elif str(Navigator) == "FMB":
         print('''
-        The bear crashes head 
+        The bear crashes head first into you, crushing your lungs and chest instantaneously. The bear's flames swarm 
+        around you, as you feel your body spread across the ground like jam.
+        
+        You have died.
         ''')
         gameOn = 1
