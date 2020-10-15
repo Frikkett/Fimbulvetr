@@ -1584,3 +1584,5 @@ Congratulations! You have completed Fimbulvetr with the 'Hollywood Explosion' en
         You have died.
         ''')
         gameOn = 1
+while True:
+    time.sleep(0.1)
