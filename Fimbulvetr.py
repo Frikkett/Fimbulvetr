@@ -373,7 +373,8 @@ Exterminate!''')
 
 # MainGame Loop
 # opens the start menu
-def MainLoop:
+def MainLoop():
+
     Menu(False)
     gameOn = 0
     segCheck = open(theGame,"r")
@@ -714,7 +715,7 @@ def MainLoop:
     
                     ''')
                     input("press [ENTER] to continue")
-                    print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
+                    Navigator = "1ABAB"
                     break
                 if gameChoice.lower() in ListC:
                     print('''
@@ -897,23 +898,24 @@ def MainLoop:
             print('''
     Your luxury jeep was made for luxury, not practicality.
     
-    You sit inside your jeep when the ashfall pours down on the roof, eventualy creating too much weight on your car,
+    You sit inside your jeep when the ashfall pours down on the roof, eventually creating too much weight on your car,
     sending metal and cloth and electrical wiring down onto you, crushing your skeleton and ending your measly life quickly.
     
     You have died.
             ''')
+            gameOn = 1
         elif str(Navigator) == "1ABABC":
             print('''
     Your picnic consists of many different foods and drinks. Its a shame you don't have anyone to share it with...
             ''')
             input("press [ENTER] to continue")
             print('''
-    To your surprise, a glowing yellow van full of crackheads rolls up to your picnic and sit down with you. They ask if
+    To your surprise, a glowing yellow van full of [STEREOTYPE HERE] rolls up to your picnic and sit down with you. They ask if
     they can join you on your picnic. There's plenty to go around.
     
     Do you...
     
-        [A] Say yes to these pipesmokers
+        [A] Say yes to these madlads
         
         [B] Eat all the food yourself
         
@@ -926,7 +928,8 @@ def MainLoop:
     Ok then, looks like you've somehow got some friends.
                     ''')
                     input("press [ENTER] to continue")
-                    Navigator = "FHP"
+                    print("")
+                    Navigator = "1ABAB"
                     break
                 if gameChoice.lower() in ListB:
                     print('''
