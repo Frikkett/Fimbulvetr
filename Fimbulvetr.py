@@ -364,6 +364,7 @@ Exterminate!''')
                     print("Type an actual option please.")
             elif menuChoice.lower() in lexit:
                 print("Exiting Program.")
+                time.sleep(2)
                 # Exits the program
                 exit()
             else:
