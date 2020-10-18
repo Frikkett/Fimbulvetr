@@ -957,7 +957,7 @@ def MainLoop():
 
         elif str(Navigator) == "1ABABAB":
             print('''
-    You chop down on your war-crime of a sandwich with the most disgusted smile I've seen since your parents had you.
+    You chomp down on your war-crime of a sandwich with the most disgusted smile I've seen since your parents had you.
     
     Do you eat more though?
     
