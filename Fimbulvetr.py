@@ -372,29 +372,39 @@ Exterminate!''')
 
 
 # MainGame Loop
-# opens the start menu
-def MainLoop():
 
+def MainLoop():
+    # opens the start menu
     Menu(False)
+    # sets the gameOn variable to 0, allowing the game to loop.
     gameOn = 0
+    # Uses the variables "segCheck" and "Navi" to set the "Navigator" variable to the stored value in the save file.
     segCheck = open(theGame,"r")
     Navi = str(segCheck.readline().strip())
     Navigator = str(Navi)
     segCheck.close()
 
+    # adds all stored items to the items list.
     with open(theGame,"r") as segCheck:
         for line in segCheck:
             line = line.strip()
             Items.append(line)
             itePast.append(line)
 
+    # sets the past value of Navigator.
     navPast = str(Navigator)
     print(" Hint: You can type 'Menu' into any typing prompt during the game to open the menu.")
+
+    # Loops the game.
     while gameOn == 0:
+        # the section of code that detects when the user progresses through the game and replaces the variable stored
+        # in the save file to match the new game progression.
         if navPast != Navigator:
             Navigatord = str(Navigator)
             repLine(0, Navigatord)
             navPast = str(Navigator)
+        # the section of code that detects when the user gains an item and adds the new item
+        # to the save file to match the found item.
         if itePast != Items:
             segCheck = open(theGame, "a")
             for i in Items:
@@ -404,11 +414,13 @@ def MainLoop():
             segCheck.close()
 
         # NOTE TO SELF: DO NOT CHANGE THE BELOW SEGMENT. IT IS THE TEMPLATE FOR COPY AND PASTE.
-
+        # Checks the value of the Navigator variable
         if str(Navigator) == "0":
+            # prints text related to the story of the particular segment
             print('''
             
             ''')
+            # loops the choices so that the user cannot get a value error
             while True:
                 gameChoice = str(input(""))
                 if gameChoice.lower() in ListA:
