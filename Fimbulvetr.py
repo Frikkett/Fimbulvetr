@@ -835,7 +835,7 @@ def MainLoop():
     Oh what a wonderful idea.
                     ''')
                     input("press [ENTER] to continue")
-                    Navigator = "1ABABC"
+                    print(" SORRY, BUT THIS PATH HAS BEEN DEMOLISHED BY A FLAMING BEAR. PLEASE CHOOSE A DIFFERENT OPTION")
                     break
                 if gameChoice.lower() in ListMenu:
                     Menu(True)
