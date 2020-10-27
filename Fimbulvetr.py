@@ -428,6 +428,7 @@ def MainLoop():
                 
                     ''')
                     input("press [ENTER] to continue")
+                    # Sets "Navigator" to the new value.
                     Navigator = "1"
                     break
                 if gameChoice.lower() in ListB:
@@ -435,6 +436,7 @@ def MainLoop():
                 
                     ''')
                     input("press [ENTER] to continue")
+                    # Sets "Navigator" to the new value.
                     Navigator = "1"
                     break
                 if gameChoice.lower() in ListC:
@@ -442,9 +444,11 @@ def MainLoop():
                 
                     ''')
                     input("press [ENTER] to continue")
+                    # Sets "Navigator" to the new value.
                     Navigator = "1"
                     break
                 if gameChoice.lower() in ListMenu:
+                    # Opens the menu when called upon.
                     Menu(True)
                     break
                 else:
@@ -460,7 +464,9 @@ def MainLoop():
 
         # NOTE TO SELF: DO NOT CHANGE THE ABOVE SEGMENT. IT IS THE TEMPLATE FOR ENDINGS.
 
-        # From here, the majority of the program is repetition of the same altered segment.
+        # From here, the majority of the program is repetition of the same altered segments above. Because of this repetition,
+        # I will not add comments to the individual segments as that would become rather boring very fast. If you have read all
+        # of the comments up to this point, then you should know everything the program does past this point.
 
         if str(Navigator) == "1":
             print('''
