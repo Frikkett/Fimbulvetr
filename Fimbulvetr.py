@@ -1584,6 +1584,7 @@ def MainLoop():
     
     You have died.
             ''')
+            gameOn = 1
         elif str(Navigator) == "FHE":
             print('''
     You put your disgrace of a sandwich down on the sand, and strap that C-4 stuff you found earlier to it. This will look
