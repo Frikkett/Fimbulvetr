@@ -114,6 +114,7 @@ def Menu(inGame):
     global yes
     global no
     global lexit
+    global cancel
     # This "While" loop allows me to end the "Menu" function when the independent variable "menuUp" is altered.
     while menuUp == 0:
         # the "r" before the three quote marks allows me to display the Text art below. Usually, the back-slashes-"\"-would signal the program to
@@ -928,7 +929,7 @@ def MainLoop():
             ''')
             input("press [ENTER] to continue")
             print('''
-    To your surprise, a glowing yellow van full of [STEREOTYPE HERE] rolls up to your picnic and sit down with you. They ask if
+    To your surprise, a glowing yellow van full of people rolls up to your picnic and they sit down with you. They ask if
     they can join you on your picnic. There's plenty to go around.
     
     Do you...
@@ -1612,4 +1613,21 @@ def MainLoop():
     input("press [ENTER] to continue")
 
 while True:
+    print('''WARNING: Some of the content in this game may be potentially disturbing, offensive, or aggravating to some people.
+          Please turn back NOW if you cannot handle:
+          Violence, Death, Animal violence, Gore, Making sensible decisions, Thinking about your actions, Large words, 
+          and most importantly: A selectively sarcastic narrator who WILL judge you and who will be MORE than happy to
+          insult you for the crimes that you will undoubtedly commit during your stay here.
+          ''')
+    input("press [ENTER] to continue")
+    print('''
+    On a more serious note, however, If you are subject to any form of reading impairment (Dyslexia, blindness, etc.)
+    then I wholeheartedly suggest that you find something else to do. This particular game is entirely based on reading,
+    and I sincerely apologize for my ineptitude, as it is most certainly my own fault that I lack the skill required to 
+    develop voice lines for this game.
+    
+    That said, I do hope you enjoy Fimbulvetr.
+    
+    ''')
+    input("press [ENTER] to continue")
     MainLoop()
